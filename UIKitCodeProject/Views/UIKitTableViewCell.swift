@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UIKitTableViewCell: UITableViewCell {
+final class UIKitTableViewCell: UITableViewCell {
     
     let mainImageView: UIImageView = {
         let imageView = UIImageView()
@@ -33,12 +33,13 @@ class UIKitTableViewCell: UITableViewCell {
     
     func setupView() {
         
-        self.addSubview(mainImageView)
+//        self.addSubview(mainImageView)
         self.addSubview(tittleLabel)
     }
     
     override func updateConstraints() {
         setConstraints()
+        super.updateConstraints()
     }
     
     func setConstraints() {
@@ -47,11 +48,11 @@ class UIKitTableViewCell: UITableViewCell {
     }
     
     func setMainImageViewConstraints() {
-        
+
         NSLayoutConstraint.activate([
             mainImageView.heightAnchor.constraint(equalToConstant: 100),
             mainImageView.widthAnchor.constraint(equalToConstant: 100),
-            mainImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            mainImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             mainImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
     }
@@ -59,18 +60,9 @@ class UIKitTableViewCell: UITableViewCell {
     func settittleLabelConstraints() {
         tittleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
+            tittleLabel.heightAnchor.constraint(equalToConstant: 22),
             tittleLabel.leadingAnchor.constraint(equalTo: mainImageView.trailingAnchor, constant: 16),
-            tittleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            tittleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
         ])
-    }
-    
-    func setMainImgaeViewConstrains() {
-        
-        
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
     }
 }

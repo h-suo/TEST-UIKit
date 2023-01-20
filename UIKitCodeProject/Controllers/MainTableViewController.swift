@@ -12,7 +12,7 @@ class MainTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = .white
         
         setupNavigation()
         navigationItemSetting()
@@ -20,10 +20,10 @@ class MainTableViewController: UITableViewController {
     }
     
     func setupNavigation() {
-        self.navigationController?.navigationBar.backgroundColor = .black
+        self.navigationController?.navigationBar.backgroundColor = .white
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "Test UIKit"
-        self.navigationController?.overrideUserInterfaceStyle = .dark
+        self.navigationController?.overrideUserInterfaceStyle = .light
     }
     
     func navigationItemSetting() {
@@ -32,8 +32,7 @@ class MainTableViewController: UITableViewController {
     }
     
     func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
+        
         tableView.rowHeight = 120
         tableView.register(UIKitTableViewCell.self, forCellReuseIdentifier: "UIKitCell")
     }
@@ -47,20 +46,25 @@ class MainTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
+        
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        
+        return 10
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "UIKitCell", for: indexPath) as! UIKitTableViewCell
         
-        cell.mainImageView.image = UIImage(named: "Button")
+        cell.mainImageView.image = UIImage(named: "ButtonMain")
         cell.tittleLabel.text = "Button"
+        cell.tittleLabel.textColor = .black
         cell.selectionStyle = .none
         
         return cell
     }
+    
 }

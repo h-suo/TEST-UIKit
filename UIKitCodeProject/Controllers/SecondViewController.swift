@@ -12,7 +12,7 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = .white
         self.navigationItem.title = "Setting"
         self.navigationItem.largeTitleDisplayMode = .never
     }
