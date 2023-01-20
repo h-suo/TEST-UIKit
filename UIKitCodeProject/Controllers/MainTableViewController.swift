@@ -12,7 +12,7 @@ class MainTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .black
         
         setupNavigation()
         navigationItemSetting()
@@ -21,10 +21,10 @@ class MainTableViewController: UITableViewController {
     }
     
     func setupNavigation() {
-        self.navigationController?.navigationBar.backgroundColor = .white
+        self.navigationController?.navigationBar.backgroundColor = .black
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "Test UIKit"
-        self.navigationController?.overrideUserInterfaceStyle = .light
+        self.navigationController?.overrideUserInterfaceStyle = .dark
     }
     
     func navigationItemSetting() {
@@ -64,7 +64,6 @@ class MainTableViewController: UITableViewController {
         
         cell.mainImageView.image = UIImage(named: "ButtonMain")
         cell.tittleLabel.text = "Button"
-        cell.descriptionLabel.text = "UIKit Button의 실험소"
         cell.selectionStyle = .none
         
         return cell
