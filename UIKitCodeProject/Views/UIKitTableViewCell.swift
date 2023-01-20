@@ -7,36 +7,61 @@
 
 import UIKit
 
+
+import UIKit
+
 final class UIKitTableViewCell: UITableViewCell {
-    
+
     let mainImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.layer.cornerRadius = 16
         return imageView
     }()
     
     let tittleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.boldSystemFont(ofSize: 17)
         return label
+    }()
+
+    let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 17)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    let stackView: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .vertical
+        sv.distribution  = .fill
+        sv.alignment = .fill
+        sv.spacing = 8
+        return sv
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
-        setupView()
+        setupStackView()
+    }
+    
+    func setupStackView() {
+        
+        self.addSubview(mainImageView)
+        
+        // 뷰컨트롤러의 기본뷰 위에 스택뷰 올리기
+        self.addSubview(stackView)
+        
+        // 스택뷰 위에 뷰들 올리기
+        stackView.addArrangedSubview(tittleLabel)
+        stackView.addArrangedSubview(descriptionLabel)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupView() {
-        
-//        self.addSubview(mainImageView)
-        self.addSubview(tittleLabel)
-    }
-    
+    // 오토레이아웃 정하는 정확한 시점
     override func updateConstraints() {
         setConstraints()
         super.updateConstraints()
@@ -44,25 +69,34 @@ final class UIKitTableViewCell: UITableViewCell {
     
     func setConstraints() {
         setMainImageViewConstraints()
-        settittleLabelConstraints()
+        setMovieNameLabelConstraints()
+        setStackViewConstraints()
     }
     
     func setMainImageViewConstraints() {
-
+        
         NSLayoutConstraint.activate([
             mainImageView.heightAnchor.constraint(equalToConstant: 100),
             mainImageView.widthAnchor.constraint(equalToConstant: 100),
-            mainImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            mainImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             mainImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
     }
     
-    func settittleLabelConstraints() {
+    func setMovieNameLabelConstraints() {
         tittleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tittleLabel.heightAnchor.constraint(equalToConstant: 22),
-            tittleLabel.leadingAnchor.constraint(equalTo: mainImageView.trailingAnchor, constant: 16),
-            tittleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            tittleLabel.heightAnchor.constraint(equalToConstant: 22)
+        ])
+    }
+    
+    func setStackViewConstraints() {
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: mainImageView.trailingAnchor, constant: 15),
+            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: self.mainImageView.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: self.mainImageView.bottomAnchor)
         ])
     }
 }

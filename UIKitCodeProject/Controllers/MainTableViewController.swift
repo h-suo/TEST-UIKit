@@ -17,6 +17,7 @@ class MainTableViewController: UITableViewController {
         setupNavigation()
         navigationItemSetting()
         setupTableView()
+        tableView.reloadData()
     }
     
     func setupNavigation() {
@@ -32,6 +33,8 @@ class MainTableViewController: UITableViewController {
     }
     
     func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
         
         tableView.rowHeight = 120
         tableView.register(UIKitTableViewCell.self, forCellReuseIdentifier: "UIKitCell")
@@ -61,7 +64,7 @@ class MainTableViewController: UITableViewController {
         
         cell.mainImageView.image = UIImage(named: "ButtonMain")
         cell.tittleLabel.text = "Button"
-        cell.tittleLabel.textColor = .black
+        cell.descriptionLabel.text = "UIKit Button의 실험소"
         cell.selectionStyle = .none
         
         return cell
