@@ -9,6 +9,10 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
 
+    var uikitArray: [UIKits] = []
+    
+    var uikitDataManager = DataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -16,6 +20,7 @@ class MainTableViewController: UITableViewController {
         
         setupNavigation()
         navigationItemSetting()
+        setupData()
         setupTableView()
         tableView.reloadData()
     }
@@ -40,6 +45,11 @@ class MainTableViewController: UITableViewController {
         tableView.register(UIKitTableViewCell.self, forCellReuseIdentifier: "UIKitCell")
     }
     
+    func setupData() {
+        uikitDataManager.makeUIKitData()
+        uikitArray = uikitDataManager.getUIKitData()
+    }
+    
     @IBAction func pressButton(_ sender: UIBarButtonItem) {
         let secondView = SecondViewController()
         self.navigationController?.pushViewController(secondView, animated: true)
@@ -55,15 +65,15 @@ class MainTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 10
+        return uikitArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "UIKitCell", for: indexPath) as! UIKitTableViewCell
         
-        cell.mainImageView.image = UIImage(named: "ButtonMain")
-        cell.tittleLabel.text = "Button"
+        cell.mainImageView.image = uikitArray[indexPath.row].UIKitImage
+        cell.tittleLabel.text = uikitArray[indexPath.row].UIKitName
         cell.selectionStyle = .none
         
         return cell

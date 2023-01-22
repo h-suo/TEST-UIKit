@@ -47,12 +47,14 @@ final class UIKitTableViewCell: UITableViewCell {
         mainImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.centerY.equalToSuperview()
-            make.size.width.height.equalTo(100)
+            make.width.equalTo(120)
+            make.height.equalTo(90)
         }
         
         tittleLabel.snp.makeConstraints { make in
             make.leading.equalTo(mainImageView.snp.trailing).offset(20)
-            make.center.equalToSuperview()
+            make.centerY.equalToSuperview()
+            
         }
     }
 }
