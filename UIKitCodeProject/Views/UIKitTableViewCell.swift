@@ -15,7 +15,7 @@ final class UIKitTableViewCell: UITableViewCell {
     let mainImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.layer.cornerRadius = 12
+        imageView.layer.cornerRadius = 16
         imageView.clipsToBounds = true
         return imageView
     }()

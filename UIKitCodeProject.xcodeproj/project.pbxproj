@@ -12,10 +12,12 @@
 		459BA8D2297A82AD006AD641 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 459BA8D1297A82AD006AD641 /* Assets.xcassets */; };
 		459BA8D5297A82AD006AD641 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459BA8D3297A82AD006AD641 /* LaunchScreen.storyboard */; };
 		459BA8E0297A8384006AD641 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459BA8DF297A8384006AD641 /* MainTableViewController.swift */; };
-		459BA8E2297A83AB006AD641 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459BA8E1297A83AB006AD641 /* SecondViewController.swift */; };
+		459BA8E2297A83AB006AD641 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459BA8E1297A83AB006AD641 /* SettingViewController.swift */; };
 		459BA8E5297A83DC006AD641 /* UIKitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459BA8E4297A83DC006AD641 /* UIKitTableViewCell.swift */; };
 		459BA8E8297AC7AB006AD641 /* UIKits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459BA8E7297AC7AB006AD641 /* UIKits.swift */; };
 		459BA8EA297AC7FC006AD641 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459BA8E9297AC7FC006AD641 /* DataManager.swift */; };
+		459BA8EC297E543A006AD641 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459BA8EB297E543A006AD641 /* DetailView.swift */; };
+		459BA8EE297E5B2D006AD641 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459BA8ED297E5B2D006AD641 /* DetailViewController.swift */; };
 		EB812CFF709C1D2577A64EE7 /* Pods_UIKitCodeProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A819A378E6190843A11D0C /* Pods_UIKitCodeProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,10 +30,12 @@
 		459BA8D4297A82AD006AD641 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		459BA8D6297A82AD006AD641 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		459BA8DF297A8384006AD641 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
-		459BA8E1297A83AB006AD641 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		459BA8E1297A83AB006AD641 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		459BA8E4297A83DC006AD641 /* UIKitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitTableViewCell.swift; sourceTree = "<group>"; };
 		459BA8E7297AC7AB006AD641 /* UIKits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKits.swift; sourceTree = "<group>"; };
 		459BA8E9297AC7FC006AD641 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		459BA8EB297E543A006AD641 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		459BA8ED297E5B2D006AD641 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		63A819A378E6190843A11D0C /* Pods_UIKitCodeProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIKitCodeProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6F6A2699D2A7598A7AC2F1A /* Pods-UIKitCodeProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitCodeProject.debug.xcconfig"; path = "Target Support Files/Pods-UIKitCodeProject/Pods-UIKitCodeProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,7 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				459BA8DF297A8384006AD641 /* MainTableViewController.swift */,
-				459BA8E1297A83AB006AD641 /* SecondViewController.swift */,
+				459BA8E1297A83AB006AD641 /* SettingViewController.swift */,
+				459BA8ED297E5B2D006AD641 /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				459BA8E4297A83DC006AD641 /* UIKitTableViewCell.swift */,
+				459BA8EB297E543A006AD641 /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -246,7 +252,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				459BA8E2297A83AB006AD641 /* SecondViewController.swift in Sources */,
+				459BA8EE297E5B2D006AD641 /* DetailViewController.swift in Sources */,
+				459BA8E2297A83AB006AD641 /* SettingViewController.swift in Sources */,
+				459BA8EC297E543A006AD641 /* DetailView.swift in Sources */,
 				459BA8E5297A83DC006AD641 /* UIKitTableViewCell.swift in Sources */,
 				459BA8E8297AC7AB006AD641 /* UIKits.swift in Sources */,
 				459BA8EA297AC7FC006AD641 /* DataManager.swift in Sources */,
