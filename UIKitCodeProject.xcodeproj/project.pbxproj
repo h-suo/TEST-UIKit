@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		452F8DE1297F9F1900CC94F5 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F8DE0297F9F1900CC94F5 /* DetailTableViewCell.swift */; };
+		452F8DE4297FF6EC00CC94F5 /* LabelDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F8DE3297FF6EC00CC94F5 /* LabelDetailView.swift */; };
+		452F8DE6297FF6F800CC94F5 /* ButtonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F8DE5297FF6F800CC94F5 /* ButtonDetailView.swift */; };
+		452F8DE9297FFC5600CC94F5 /* LabelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F8DE8297FFC5600CC94F5 /* LabelDetailViewController.swift */; };
+		452F8DEB297FFC6100CC94F5 /* ButtonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F8DEA297FFC6100CC94F5 /* ButtonDetailViewController.swift */; };
 		459BA8C9297A82AC006AD641 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459BA8C8297A82AC006AD641 /* AppDelegate.swift */; };
 		459BA8CB297A82AC006AD641 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459BA8CA297A82AC006AD641 /* SceneDelegate.swift */; };
 		459BA8D2297A82AD006AD641 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 459BA8D1297A82AD006AD641 /* Assets.xcassets */; };
@@ -23,6 +28,11 @@
 
 /* Begin PBXFileReference section */
 		41B5308E8486D95A06BAE6D0 /* Pods-UIKitCodeProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitCodeProject.release.xcconfig"; path = "Target Support Files/Pods-UIKitCodeProject/Pods-UIKitCodeProject.release.xcconfig"; sourceTree = "<group>"; };
+		452F8DE0297F9F1900CC94F5 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		452F8DE3297FF6EC00CC94F5 /* LabelDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDetailView.swift; sourceTree = "<group>"; };
+		452F8DE5297FF6F800CC94F5 /* ButtonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDetailView.swift; sourceTree = "<group>"; };
+		452F8DE8297FFC5600CC94F5 /* LabelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDetailViewController.swift; sourceTree = "<group>"; };
+		452F8DEA297FFC6100CC94F5 /* ButtonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDetailViewController.swift; sourceTree = "<group>"; };
 		459BA8C5297A82AC006AD641 /* UIKitCodeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitCodeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		459BA8C8297A82AC006AD641 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		459BA8CA297A82AC006AD641 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +62,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		452F8DE2297FF6C700CC94F5 /* UIKitDetailViews */ = {
+			isa = PBXGroup;
+			children = (
+				452F8DE3297FF6EC00CC94F5 /* LabelDetailView.swift */,
+				452F8DE5297FF6F800CC94F5 /* ButtonDetailView.swift */,
+			);
+			path = UIKitDetailViews;
+			sourceTree = "<group>";
+		};
+		452F8DE7297FFC3A00CC94F5 /* UIKitsDetailViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				452F8DE8297FFC5600CC94F5 /* LabelDetailViewController.swift */,
+				452F8DEA297FFC6100CC94F5 /* ButtonDetailViewController.swift */,
+			);
+			path = UIKitsDetailViewControllers;
+			sourceTree = "<group>";
+		};
 		459BA8BC297A82AC006AD641 = {
 			isa = PBXGroup;
 			children = (
@@ -97,8 +125,9 @@
 			isa = PBXGroup;
 			children = (
 				459BA8DF297A8384006AD641 /* MainTableViewController.swift */,
-				459BA8E1297A83AB006AD641 /* SettingViewController.swift */,
 				459BA8ED297E5B2D006AD641 /* DetailViewController.swift */,
+				452F8DE7297FFC3A00CC94F5 /* UIKitsDetailViewControllers */,
+				459BA8E1297A83AB006AD641 /* SettingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -107,7 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				459BA8E4297A83DC006AD641 /* UIKitTableViewCell.swift */,
+				452F8DE0297F9F1900CC94F5 /* DetailTableViewCell.swift */,
 				459BA8EB297E543A006AD641 /* DetailView.swift */,
+				452F8DE2297FF6C700CC94F5 /* UIKitDetailViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -253,13 +284,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				459BA8EE297E5B2D006AD641 /* DetailViewController.swift in Sources */,
+				452F8DE9297FFC5600CC94F5 /* LabelDetailViewController.swift in Sources */,
 				459BA8E2297A83AB006AD641 /* SettingViewController.swift in Sources */,
 				459BA8EC297E543A006AD641 /* DetailView.swift in Sources */,
+				452F8DE6297FF6F800CC94F5 /* ButtonDetailView.swift in Sources */,
 				459BA8E5297A83DC006AD641 /* UIKitTableViewCell.swift in Sources */,
 				459BA8E8297AC7AB006AD641 /* UIKits.swift in Sources */,
 				459BA8EA297AC7FC006AD641 /* DataManager.swift in Sources */,
 				459BA8C9297A82AC006AD641 /* AppDelegate.swift in Sources */,
+				452F8DE4297FF6EC00CC94F5 /* LabelDetailView.swift in Sources */,
+				452F8DEB297FFC6100CC94F5 /* ButtonDetailViewController.swift in Sources */,
 				459BA8E0297A8384006AD641 /* MainTableViewController.swift in Sources */,
+				452F8DE1297F9F1900CC94F5 /* DetailTableViewCell.swift in Sources */,
 				459BA8CB297A82AC006AD641 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,15 +1,15 @@
 //
-//  DetailViewController.swift
+//  ButtonDetailViewController.swift
 //  UIKitCodeProject
 //
-//  Created by 표현수 on 2023/01/23.
+//  Created by 표현수 on 2023/01/24.
 //
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class ButtonDetailViewController: UIViewController {
 
-    private var detailView = DetailView()
+    private var detailView = ButtonDetailView()
     
     var uikitData: UIKits?
     
@@ -42,7 +42,7 @@ class DetailViewController: UIViewController {
     }
 }
 
-extension DetailViewController: UITableViewDataSource {
+extension ButtonDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
@@ -60,6 +60,6 @@ extension DetailViewController: UITableViewDataSource {
     
 }
 
-extension DetailViewController: UITableViewDelegate {
+extension ButtonDetailViewController: UITableViewDelegate {
     
 }

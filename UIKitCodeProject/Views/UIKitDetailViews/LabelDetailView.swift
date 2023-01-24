@@ -1,17 +1,17 @@
 //
-//  DetailView.swift
+//  LabelDetailView.swift
 //  UIKitCodeProject
 //
-//  Created by 표현수 on 2023/01/23.
+//  Created by 표현수 on 2023/01/24.
 //
 
 import UIKit
 
-class DetailView: UIView {
+class LabelDetailView: UIView {
     
     let label: UILabel = {
         let lab = UILabel()
-        lab.text = "label"
+        lab.text = "Label"
         
         return lab
     }()

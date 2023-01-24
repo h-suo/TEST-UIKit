@@ -8,8 +8,6 @@
 import UIKit
 import SnapKit
 
-import UIKit
-
 final class UIKitTableViewCell: UITableViewCell {
 
     let mainImageView: UIImageView = {
@@ -28,10 +26,10 @@ final class UIKitTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
-        setupStackView()
+        setupView()
     }
     
-    func setupStackView() {
+    func setupView() {
         
         self.addSubview(mainImageView)
         self.addSubview(tittleLabel)
@@ -57,4 +55,5 @@ final class UIKitTableViewCell: UITableViewCell {
             
         }
     }
+    
 }

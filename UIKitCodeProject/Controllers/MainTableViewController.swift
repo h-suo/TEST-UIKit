@@ -81,9 +81,24 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let detailVC = DetailViewController()
+        if uikitArray[indexPath.row].UIKitName == "Label" {
+            
+        }
         
-        navigationController?.pushViewController(detailVC, animated: true)
+        switch uikitArray[indexPath.row].UIKitName {
+        case "Label":
+            let detailVC = LabelDetailViewController()
+            detailVC.uikitData = uikitArray[indexPath.row]
+            
+            navigationController?.pushViewController(detailVC, animated: true)
+        case "Button":
+            let detailVC = ButtonDetailViewController()
+            detailVC.uikitData = uikitArray[indexPath.row]
+            
+            navigationController?.pushViewController(detailVC, animated: true)
+        default:
+            break
+        }
     }
     
 }

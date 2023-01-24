@@ -13,6 +13,9 @@ class SettingViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = .black
+    }
+    
+    func setupNavigation() {
         self.navigationItem.title = "Setting"
         self.navigationItem.largeTitleDisplayMode = .never
     }

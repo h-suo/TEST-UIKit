@@ -1,20 +1,13 @@
 //
-//  DetailView.swift
+//  LabelDetailViews.swift
 //  UIKitCodeProject
 //
-//  Created by 표현수 on 2023/01/23.
+//  Created by 표현수 on 2023/01/24.
 //
 
 import UIKit
 
-class DetailView: UIView {
-    
-    let label: UILabel = {
-        let lab = UILabel()
-        lab.text = "label"
-        
-        return lab
-    }()
+class LabelDetailView: UIView {
     
     let actionView: UIView = {
         let av = UIView()
@@ -24,9 +17,15 @@ class DetailView: UIView {
         return av
     }()
     
+    let label: UILabel = {
+        let l = UILabel()
+        
+        return l
+    }()
+    
     let codeTableView: UITableView = {
         let ctv = UITableView()
-        ctv.backgroundColor = .quaternarySystemFill
+        ctv.backgroundColor = .systemFill
         
         return ctv
     }()
@@ -39,7 +38,6 @@ class DetailView: UIView {
     
     func setupStackView() {
         
-        self.addSubview(label)
         self.addSubview(actionView)
         self.addSubview(codeTableView)
         
@@ -52,10 +50,10 @@ class DetailView: UIView {
     
     func setConstraints() {
         actionView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(40)
-            make.trailing.equalToSuperview().offset(-40)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
             make.top.equalTo(safeAreaLayoutGuide).offset(20)
-            make.height.equalTo(200)
+            make.height.equalTo(250)
         }
         
         label.snp.makeConstraints { make in

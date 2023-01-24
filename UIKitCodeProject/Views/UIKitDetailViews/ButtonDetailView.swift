@@ -1,19 +1,20 @@
 //
-//  DetailView.swift
+//  ButtonDetailView.swift
 //  UIKitCodeProject
 //
-//  Created by 표현수 on 2023/01/23.
+//  Created by 표현수 on 2023/01/24.
 //
 
 import UIKit
 
-class DetailView: UIView {
+class ButtonDetailView: UIView {
     
-    let label: UILabel = {
-        let lab = UILabel()
-        lab.text = "label"
+    let button: UIButton = {
+        let bt = UIButton(type: .system)
+        bt.setTitle("Button", for: .normal)
+        bt.backgroundColor = .white
         
-        return lab
+        return bt
     }()
     
     let actionView: UIView = {
@@ -39,7 +40,7 @@ class DetailView: UIView {
     
     func setupStackView() {
         
-        self.addSubview(label)
+        self.addSubview(button)
         self.addSubview(actionView)
         self.addSubview(codeTableView)
         
@@ -58,7 +59,7 @@ class DetailView: UIView {
             make.height.equalTo(200)
         }
         
-        label.snp.makeConstraints { make in
+        button.snp.makeConstraints { make in
             make.centerX.centerY.equalTo(actionView)
         }
         
