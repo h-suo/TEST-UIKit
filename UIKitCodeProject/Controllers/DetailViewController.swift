@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
     private var detailView = DetailView()
     
     var uikitData: UIKits?
-    
+        
     override func loadView() {
         
         self.view = detailView

@@ -13,8 +13,8 @@ class DataManager {
     
     func makeUIKitData() {
         uikitList = [
-            UIKits(UIKitImage: UIImage(named: "Label"), UIKitName: "Label"),
-            UIKits(UIKitImage: UIImage(named: "Button"), UIKitName: "Button"),
+            UIKits(UIKitImage: UIImage(named: "Label"), UIKitName: "Label", UIKitFunction: ["label.text", "label.font", "label.textColor", "label.textAlignment", "label.lineBreakMode", "label.numberOfLines"], UIKitFunctionType: ["String?", "UIFont!", "UIColor!", "NSTextAlignment", "NSLineBreakMode", "Int"]),
+//            UIKits(UIKitImage: UIImage(named: "Button"), UIKitName: "Button"),
 //            UIKits(UIKitImage: UIImage(named: "Segmented Control"), UIKitName: "Segmented Control"),
 //            UIKits(UIKitImage: UIImage(named: "Switch"), UIKitName: "Switch"),
 //            UIKits(UIKitImage: UIImage(named: "Text Field"), UIKitName: "Text Field"),

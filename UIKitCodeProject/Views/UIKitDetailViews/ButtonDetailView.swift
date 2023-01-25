@@ -17,6 +17,15 @@ class ButtonDetailView: UIView {
         return bt
     }()
     
+    let setupLabel: UILabel = {
+        let lab = UILabel()
+        lab.text = "button = UIButton(type: .system)"
+        lab.font = .systemFont(ofSize: 16)
+        lab.textColor = .gray
+        
+        return lab
+    }()
+    
     let actionView: UIView = {
         let av = UIView()
         av.backgroundColor = .systemFill
@@ -41,6 +50,7 @@ class ButtonDetailView: UIView {
     func setupStackView() {
         
         self.addSubview(button)
+        self.addSubview(setupLabel)
         self.addSubview(actionView)
         self.addSubview(codeTableView)
         
@@ -62,7 +72,10 @@ class ButtonDetailView: UIView {
         button.snp.makeConstraints { make in
             make.centerX.centerY.equalTo(actionView)
         }
-        
+        setupLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(8)
+            make.bottom.equalTo(codeTableView.snp.top).offset(-8)
+        }
         codeTableView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
             make.top.equalTo(actionView.snp.bottom).offset(40)

@@ -12,6 +12,15 @@ class LabelDetailView: UIView {
     let label: UILabel = {
         let lab = UILabel()
         lab.text = "Label"
+
+        return lab
+    }()
+    
+    let setupLabel: UILabel = {
+        let lab = UILabel()
+        lab.text = "label = UILabel()"
+        lab.font = .systemFont(ofSize: 16)
+        lab.textColor = .gray
         
         return lab
     }()
@@ -40,6 +49,7 @@ class LabelDetailView: UIView {
     func setupStackView() {
         
         self.addSubview(label)
+        self.addSubview(setupLabel)
         self.addSubview(actionView)
         self.addSubview(codeTableView)
         
@@ -57,11 +67,13 @@ class LabelDetailView: UIView {
             make.top.equalTo(safeAreaLayoutGuide).offset(20)
             make.height.equalTo(200)
         }
-        
         label.snp.makeConstraints { make in
             make.centerX.centerY.equalTo(actionView)
         }
-        
+        setupLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(8)
+            make.bottom.equalTo(codeTableView.snp.top).offset(-8)
+        }
         codeTableView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
             make.top.equalTo(actionView.snp.bottom).offset(40)

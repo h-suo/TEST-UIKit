@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LabelDetailViewController: UIViewController {
+class LabelDetailViewController: UIViewController, UITextFieldDelegate {
 
     private var detailView = LabelDetailView()
     
@@ -40,19 +40,26 @@ class LabelDetailViewController: UIViewController {
     func setupData() {
         
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
 
 extension LabelDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return uikitData?.UIKitFunction.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CodeCell", for: indexPath) as! DetailTableViewCell
         
-        cell.label.text = "none code "
+        cell.label.text = uikitData?.UIKitFunction[indexPath.row]
+        cell.textField.placeholder = uikitData?.UIKitFunctionType[indexPath.row]
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
+        cell.textField.tag = indexPath.row
+        cell.textField.delegate = self
         
         return cell
     }
@@ -61,5 +68,7 @@ extension LabelDetailViewController: UITableViewDataSource {
 }
 
 extension LabelDetailViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }

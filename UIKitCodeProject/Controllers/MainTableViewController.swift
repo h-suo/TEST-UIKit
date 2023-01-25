@@ -81,10 +81,6 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if uikitArray[indexPath.row].UIKitName == "Label" {
-            
-        }
-        
         switch uikitArray[indexPath.row].UIKitName {
         case "Label":
             let detailVC = LabelDetailViewController()

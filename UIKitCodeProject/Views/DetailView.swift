@@ -9,13 +9,6 @@ import UIKit
 
 class DetailView: UIView {
     
-    let label: UILabel = {
-        let lab = UILabel()
-        lab.text = "label"
-        
-        return lab
-    }()
-    
     let actionView: UIView = {
         let av = UIView()
         av.backgroundColor = .systemFill
@@ -39,7 +32,6 @@ class DetailView: UIView {
     
     func setupStackView() {
         
-        self.addSubview(label)
         self.addSubview(actionView)
         self.addSubview(codeTableView)
         
@@ -56,10 +48,6 @@ class DetailView: UIView {
             make.trailing.equalToSuperview().offset(-40)
             make.top.equalTo(safeAreaLayoutGuide).offset(20)
             make.height.equalTo(200)
-        }
-        
-        label.snp.makeConstraints { make in
-            make.centerX.centerY.equalTo(actionView)
         }
         
         codeTableView.snp.makeConstraints { make in

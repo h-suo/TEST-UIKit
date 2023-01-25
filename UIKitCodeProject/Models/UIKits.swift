@@ -10,4 +10,6 @@ import UIKit
 struct UIKits {
     var UIKitImage: UIImage?
     var UIKitName: String
+    var UIKitFunction: [String]
+    var UIKitFunctionType: [String]
 }
