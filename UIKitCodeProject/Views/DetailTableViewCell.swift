@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailTableViewCell: UITableViewCell {
+class DetailTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     let label: UILabel = {
         let lab = UILabel()

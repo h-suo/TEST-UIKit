@@ -7,11 +7,14 @@
 
 import UIKit
 
-class LabelDetailViewController: UIViewController, UITextFieldDelegate {
-
+class LabelDetailViewController: UIViewController {
+    
     private var detailView = LabelDetailView()
     
     var uikitData: UIKits?
+    
+    var textData: String = ""
+    var codeTag: Int = 0
     
     override func loadView() {
         
@@ -20,7 +23,7 @@ class LabelDetailViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupNavigation()
         setupDetailView()
     }
@@ -38,7 +41,8 @@ class LabelDetailViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setupData() {
-        
+        detailView.label.text = textData
+//        detailView.label.
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -56,19 +60,30 @@ extension LabelDetailViewController: UITableViewDataSource {
         
         cell.label.text = uikitData?.UIKitFunction[indexPath.row]
         cell.textField.placeholder = uikitData?.UIKitFunctionType[indexPath.row]
+        cell.textField.tag = indexPath.row
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
-        cell.textField.tag = indexPath.row
         cell.textField.delegate = self
         
         return cell
     }
-    
-    
 }
 
 extension LabelDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+}
+
+extension LabelDetailViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        textData = textField.text!
+        codeTag = textField.tag
+        
+        setupData()
+        
+        return true
     }
 }
