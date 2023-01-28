@@ -10,6 +10,21 @@ import UIKit
 struct UIKits {
     var UIKitImage: UIImage?
     var UIKitName: String
+}
+
+struct UIKitsCodeFunction {
+    var UIKitName: String
     var UIKitFunction: [String]
     var UIKitFunctionType: [String]
+}
+
+struct UIKitsButtonFunction {
+    var UIKitName: String
+    var UIKitFunction: [String]
+    var UIKitFunctionType: [String]
+}
+
+struct ButtonFunctionOptions {
+    var UIKitName: String
+
 }

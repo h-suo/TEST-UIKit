@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +25,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name=".black"/>
                         <constraints>
                             <constraint firstItem="Lkn-70-4OO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="PiC-ED-Hr0"/>
                             <constraint firstItem="Lkn-70-4OO" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="zyz-zH-4Rh"/>
@@ -38,5 +39,8 @@
     </scenes>
     <resources>
         <image name="tu app icon" width="1024" height="1024"/>
+        <namedColor name=".black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

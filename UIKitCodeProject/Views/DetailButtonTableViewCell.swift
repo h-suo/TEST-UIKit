@@ -1,13 +1,13 @@
 //
-//  DetailTableViewCell.swift
+//  DetailButtonTableViewCell.swift
 //  UIKitCodeProject
 //
-//  Created by 표현수 on 2023/01/24.
+//  Created by 표현수 on 2023/01/27.
 //
 
 import UIKit
 
-class DetailTableViewCell: UITableViewCell {
+class DetailButtonTableViewCell: UITableViewCell {
     
     let label: UILabel = {
         let lab = UILabel()
@@ -25,13 +25,13 @@ class DetailTableViewCell: UITableViewCell {
         return lab
     }()
     
-    let textField: UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .roundedRect
-        tf.backgroundColor = .systemFill
-        tf.clearButtonMode = .always
-
-        return tf
+    let button: UIButton = {
+        let pub = UIButton(type: .system)
+        pub.showsMenuAsPrimaryAction = true
+        pub.backgroundColor = .systemFill
+        pub.layer.cornerRadius = 4
+        
+        return pub
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -43,7 +43,7 @@ class DetailTableViewCell: UITableViewCell {
         
         self.addSubview(label)
         self.addSubview(equalLabel)
-        self.contentView.addSubview(textField)
+        self.contentView.addSubview(button)
         
         setConstraints()
     }
@@ -60,24 +60,12 @@ class DetailTableViewCell: UITableViewCell {
         equalLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalTo(label.snp.trailing).offset(12)
-            make.trailing.equalTo(textField.snp.leading).offset(-12)
+            make.trailing.equalTo(button.snp.leading).offset(-12)
         }
-        textField.snp.makeConstraints { make in
+        button.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().offset(-12)
             make.width.equalTo(160)
         }
     }
-    
-    @objc private func textFieldEditingChanged(_ textField: UITextField) {
-        if textField.text?.count == 1 {
-            if textField.text?.first == " " {
-                textField.text = ""
-                return
-            }
-        }
-        guard let code = textField.text else { return }
-        print(code)
-    }
-    
 }

@@ -69,6 +69,7 @@ class LabelDetailView: UIView {
         }
         label.snp.makeConstraints { make in
             make.centerX.centerY.equalTo(actionView)
+            make.width.equalTo(120)
         }
         setupLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(8)

@@ -9,7 +9,9 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
 
-    var uikitArray: [UIKits] = []
+    var uikitList: [UIKits] = []
+    var uikitCodeList: [UIKitsCodeFunction] = []
+    var uikitButtonList: [UIKitsButtonFunction] = []
     
     var uikitDataManager = DataManager()
     
@@ -47,7 +49,13 @@ class MainTableViewController: UITableViewController {
     
     func setupData() {
         uikitDataManager.makeUIKitData()
-        uikitArray = uikitDataManager.getUIKitData()
+        uikitList = uikitDataManager.getUIKitData()
+
+        uikitDataManager.makeUIKitCodeFunctionData()
+        uikitCodeList = uikitDataManager.getUIKitCodeData()
+        
+        uikitDataManager.makeUIKitButtonFunctionData()
+        uikitButtonList = uikitDataManager.getUIKitButtonData()
     }
     
     @IBAction func pressButton(_ sender: UIBarButtonItem) {
@@ -65,15 +73,15 @@ class MainTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return uikitArray.count
+        return uikitList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "UIKitCell", for: indexPath) as! UIKitTableViewCell
         
-        cell.mainImageView.image = uikitArray[indexPath.row].UIKitImage
-        cell.tittleLabel.text = uikitArray[indexPath.row].UIKitName
+        cell.mainImageView.image = uikitList[indexPath.row].UIKitImage
+        cell.tittleLabel.text = uikitList[indexPath.row].UIKitName
         cell.selectionStyle = .none
         
         return cell
@@ -81,15 +89,17 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        switch uikitArray[indexPath.row].UIKitName {
+        switch uikitList[indexPath.row].UIKitName {
         case "Label":
             let detailVC = LabelDetailViewController()
-            detailVC.uikitData = uikitArray[indexPath.row]
+            detailVC.uikitData = uikitList[indexPath.row]
+            detailVC.uikitCodeData = uikitCodeList[indexPath.row]
+            detailVC.uikitButtonData = uikitButtonList[indexPath.row]
             
             navigationController?.pushViewController(detailVC, animated: true)
         case "Button":
             let detailVC = ButtonDetailViewController()
-            detailVC.uikitData = uikitArray[indexPath.row]
+            detailVC.uikitData = uikitList[indexPath.row]
             
             navigationController?.pushViewController(detailVC, animated: true)
         default:
