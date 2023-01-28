@@ -32,13 +32,15 @@ class DataManager {
     
     func makeUIKitCodeFunctionData() {
         codeFunctionList = [
-            UIKitsCodeFunction(UIKitName: "Label", UIKitFunction: ["label.text", "label.numberOfLines"], UIKitFunctionType: ["String?", "Int" ])
+            UIKitsCodeFunction(UIKitName: "Label", UIKitFunction: ["label.text", "label.numberOfLines"], UIKitFunctionType: ["String?", "Int" ]),
+            UIKitsCodeFunction(UIKitName: "Button", UIKitFunction: ["button.setTitle"], UIKitFunctionType: ["String?"])
         ]
     }
     
     func makeUIKitButtonFunctionData() {
         buttonFunctionList = [
-            UIKitsButtonFunction(UIKitName: "Label", UIKitFunction: ["label.font", "label.textColor", "label.textAlignment"], UIKitFunctionType: ["UIFont!", "UIColor!", "NSTextAlignment"])
+            UIKitsButtonFunction(UIKitName: "Label", UIKitFunction: ["label.font", "label.textColor", "label.textAlignment"], UIKitFunctionType: ["UIFont!", "UIColor!", "NSTextAlignment"]),
+            UIKitsButtonFunction(UIKitName: "Label", UIKitFunction: [ "button.setTitleColor"], UIKitFunctionType: ["UIColor?"])
         ]
     }
     
