@@ -92,7 +92,7 @@ extension ButtonDetailViewController: UITableViewDataSource {
                 let gray = UIAction(title: "gray", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.setTitleColor(.gray, for: .normal) })
                 let white = UIAction(title: "white", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.setTitleColor(.white, for: .normal) })
                 let black = UIAction(title: "black", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.setTitleColor(.black, for: .normal) })
-                bCell.button.menu = UIMenu(title: "UIColor?",
+                bCell.button.menu = UIMenu(title: "UIColor",
                                              image: UIImage(systemName: ""),
                                              identifier: nil,
                                              options: .displayInline,
@@ -100,7 +100,7 @@ extension ButtonDetailViewController: UITableViewDataSource {
             case "UIImage?":
                 let Image = UIAction(title: "Image", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.setImage(UIImage(named: "Image")?.withRenderingMode(.alwaysOriginal), for: .normal) })
                 let none = UIAction(title: "none", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.setImage(UIImage(named: ""), for: .normal) })
-                bCell.button.menu = UIMenu(title: "UIImage?",
+                bCell.button.menu = UIMenu(title: "UIImage",
                                              image: UIImage(systemName: ""),
                                              identifier: nil,
                                              options: .displayInline,

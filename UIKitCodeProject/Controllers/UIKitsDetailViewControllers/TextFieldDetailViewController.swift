@@ -95,7 +95,7 @@ extension TextFieldDetailViewController: UITableViewDataSource {
                 let gray = UIAction(title: "gray", image: UIImage(systemName: ""), handler: { _ in self.detailView.textField.textColor = .gray })
                 let white = UIAction(title: "white", image: UIImage(systemName: ""), handler: { _ in self.detailView.textField.textColor = .white })
                 let black = UIAction(title: "black", image: UIImage(systemName: ""), handler: { _ in self.detailView.textField.textColor = .black })
-                bCell.button.menu = UIMenu(title: "UIColor?",
+                bCell.button.menu = UIMenu(title: "UIColor",
                                              image: UIImage(systemName: ""),
                                              identifier: nil,
                                              options: .displayInline,
