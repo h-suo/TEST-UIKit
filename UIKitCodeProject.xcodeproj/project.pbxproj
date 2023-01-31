@@ -12,6 +12,8 @@
 		452F8DE6297FF6F800CC94F5 /* ButtonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F8DE5297FF6F800CC94F5 /* ButtonDetailView.swift */; };
 		452F8DE9297FFC5600CC94F5 /* LabelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F8DE8297FFC5600CC94F5 /* LabelDetailViewController.swift */; };
 		452F8DEB297FFC6100CC94F5 /* ButtonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F8DEA297FFC6100CC94F5 /* ButtonDetailViewController.swift */; };
+		4550192C2988B435006D052F /* TextFieldDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4550192B2988B435006D052F /* TextFieldDetailView.swift */; };
+		4550192E2988B4DF006D052F /* TextFieldDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4550192D2988B4DF006D052F /* TextFieldDetailViewController.swift */; };
 		4596B3832983EE2A004435D3 /* DetailButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4596B3822983EE2A004435D3 /* DetailButtonTableViewCell.swift */; };
 		459BA8C9297A82AC006AD641 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459BA8C8297A82AC006AD641 /* AppDelegate.swift */; };
 		459BA8CB297A82AC006AD641 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459BA8CA297A82AC006AD641 /* SceneDelegate.swift */; };
@@ -34,6 +36,8 @@
 		452F8DE5297FF6F800CC94F5 /* ButtonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDetailView.swift; sourceTree = "<group>"; };
 		452F8DE8297FFC5600CC94F5 /* LabelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDetailViewController.swift; sourceTree = "<group>"; };
 		452F8DEA297FFC6100CC94F5 /* ButtonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDetailViewController.swift; sourceTree = "<group>"; };
+		4550192B2988B435006D052F /* TextFieldDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDetailView.swift; sourceTree = "<group>"; };
+		4550192D2988B4DF006D052F /* TextFieldDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDetailViewController.swift; sourceTree = "<group>"; };
 		4596B3822983EE2A004435D3 /* DetailButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailButtonTableViewCell.swift; sourceTree = "<group>"; };
 		459BA8C5297A82AC006AD641 /* UIKitCodeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitCodeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		459BA8C8297A82AC006AD641 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 			children = (
 				452F8DE3297FF6EC00CC94F5 /* LabelDetailView.swift */,
 				452F8DE5297FF6F800CC94F5 /* ButtonDetailView.swift */,
+				4550192B2988B435006D052F /* TextFieldDetailView.swift */,
 			);
 			path = UIKitDetailViews;
 			sourceTree = "<group>";
@@ -78,6 +83,7 @@
 			children = (
 				452F8DE8297FFC5600CC94F5 /* LabelDetailViewController.swift */,
 				452F8DEA297FFC6100CC94F5 /* ButtonDetailViewController.swift */,
+				4550192D2988B4DF006D052F /* TextFieldDetailViewController.swift */,
 			);
 			path = UIKitsDetailViewControllers;
 			sourceTree = "<group>";
@@ -297,7 +303,9 @@
 				459BA8C9297A82AC006AD641 /* AppDelegate.swift in Sources */,
 				452F8DE4297FF6EC00CC94F5 /* LabelDetailView.swift in Sources */,
 				4596B3832983EE2A004435D3 /* DetailButtonTableViewCell.swift in Sources */,
+				4550192C2988B435006D052F /* TextFieldDetailView.swift in Sources */,
 				452F8DEB297FFC6100CC94F5 /* ButtonDetailViewController.swift in Sources */,
+				4550192E2988B4DF006D052F /* TextFieldDetailViewController.swift in Sources */,
 				459BA8E0297A8384006AD641 /* MainTableViewController.swift in Sources */,
 				452F8DE1297F9F1900CC94F5 /* DetailTableViewCell.swift in Sources */,
 				459BA8CB297A82AC006AD641 /* SceneDelegate.swift in Sources */,

@@ -49,7 +49,7 @@ class ButtonDetailView: UIView {
     
     func setupStackView() {
         
-        self.addSubview(button)
+        self.actionView.addSubview(button)
         self.addSubview(setupLabel)
         self.addSubview(actionView)
         self.addSubview(codeTableView)
@@ -70,6 +70,8 @@ class ButtonDetailView: UIView {
         }
         
         button.snp.makeConstraints { make in
+            make.width.equalTo(80)
+            make.height.equalTo(20)
             make.centerX.centerY.equalTo(actionView)
         }
         setupLabel.snp.makeConstraints { make in

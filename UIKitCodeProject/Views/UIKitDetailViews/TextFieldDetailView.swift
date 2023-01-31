@@ -1,24 +1,25 @@
 //
-//  LabelDetailView.swift
+//  TextFieldDetailView.swift
 //  UIKitCodeProject
 //
-//  Created by 표현수 on 2023/01/24.
+//  Created by 표현수 on 2023/01/31.
 //
 
 import UIKit
 
-class LabelDetailView: UIView {
+class TextFieldDetailView: UIView {
     
-    let label: UILabel = {
-        let lab = UILabel()
-        lab.text = "Label"
-
-        return lab
+    let textField: UITextField = {
+        let tf = UITextField()
+        tf.backgroundColor = .systemFill
+        tf.placeholder = "Text Field"
+        
+        return tf
     }()
     
     let setupLabel: UILabel = {
         let lab = UILabel()
-        lab.text = "label = UILabel()"
+        lab.text = "textField = UITextField()"
         lab.font = .systemFont(ofSize: 16)
         lab.textColor = .gray
         
@@ -48,7 +49,7 @@ class LabelDetailView: UIView {
     
     func setupStackView() {
         
-        self.actionView.addSubview(label)
+        self.actionView.addSubview(textField)
         self.addSubview(setupLabel)
         self.addSubview(actionView)
         self.addSubview(codeTableView)
@@ -67,9 +68,10 @@ class LabelDetailView: UIView {
             make.top.equalTo(safeAreaLayoutGuide).offset(20)
             make.height.equalTo(200)
         }
-        label.snp.makeConstraints { make in
-            make.centerX.centerY.equalTo(actionView)
+        
+        textField.snp.makeConstraints { make in
             make.width.equalTo(120)
+            make.centerX.centerY.equalTo(actionView)
         }
         setupLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(8)

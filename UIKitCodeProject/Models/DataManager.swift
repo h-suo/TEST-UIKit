@@ -17,9 +17,9 @@ class DataManager {
         uikitList = [
             UIKits(UIKitImage: UIImage(named: "Label"), UIKitName: "Label"),
             UIKits(UIKitImage: UIImage(named: "Button"), UIKitName: "Button"),
+            UIKits(UIKitImage: UIImage(named: "Text Field"), UIKitName: "Text Field"),
             UIKits(UIKitImage: UIImage(named: "Segmented Control"), UIKitName: "Segmented Control"),
             UIKits(UIKitImage: UIImage(named: "Switch"), UIKitName: "Switch"),
-            UIKits(UIKitImage: UIImage(named: "Text Field"), UIKitName: "Text Field"),
             UIKits(UIKitImage: UIImage(named: "Slider"), UIKitName: "Slider"),
             UIKits(UIKitImage: UIImage(named: "Stepper"), UIKitName: "Stepper"),
             UIKits(UIKitImage: UIImage(named: "Picker View"), UIKitName: "Picker View"),
@@ -33,14 +33,16 @@ class DataManager {
     func makeUIKitCodeFunctionData() {
         codeFunctionList = [
             UIKitsCodeFunction(UIKitName: "Label", UIKitFunction: ["label.text", "label.numberOfLines"], UIKitFunctionType: ["String?", "Int" ]),
-            UIKitsCodeFunction(UIKitName: "Button", UIKitFunction: ["button.setTitle"], UIKitFunctionType: ["String?"])
+            UIKitsCodeFunction(UIKitName: "Button", UIKitFunction: ["button.setTitle"], UIKitFunctionType: ["String?"]),
+            UIKitsCodeFunction(UIKitName: "TextField", UIKitFunction: ["textField.text","textField.placeholder"], UIKitFunctionType: ["String?", "String?"])
         ]
     }
     
     func makeUIKitButtonFunctionData() {
         buttonFunctionList = [
             UIKitsButtonFunction(UIKitName: "Label", UIKitFunction: ["label.font", "label.textColor", "label.textAlignment"], UIKitFunctionType: ["UIFont!", "UIColor!", "NSTextAlignment"]),
-            UIKitsButtonFunction(UIKitName: "Label", UIKitFunction: [ "button.setTitleColor"], UIKitFunctionType: ["UIColor?"])
+            UIKitsButtonFunction(UIKitName: "Label", UIKitFunction: [ "button.setTitleColor", "button.setImage"], UIKitFunctionType: ["UIColor?", "UIImage?"]),
+            UIKitsButtonFunction(UIKitName: "TextField", UIKitFunction: [ "textField.textColor", "textField.BorderStyle"], UIKitFunctionType: ["UIColor?", "Style"])
         ]
     }
     
