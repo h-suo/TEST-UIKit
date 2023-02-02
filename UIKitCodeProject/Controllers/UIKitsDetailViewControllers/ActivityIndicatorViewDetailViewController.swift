@@ -1,15 +1,15 @@
 //
-//  ButtonDetailViewController.swift
+//  ActivityIndicatorViewDetailViewController.swift
 //  UIKitCodeProject
 //
-//  Created by 표현수 on 2023/01/24.
+//  Created by 표현수 on 2023/02/02.
 //
 
 import UIKit
 
-class ButtonDetailViewController: UIViewController {
+class ActivityIndicatorViewDetailViewController: UIViewController {
 
-    private var detailView = ButtonDetailView()
+    private var detailView = ActivityIndicatorViewDetailView()
     
     var uikitData: UIKits?
     var uikitCodeData: UIKitsCodeFunction?
@@ -30,6 +30,7 @@ class ButtonDetailViewController: UIViewController {
         setupDetailView()
     }
     
+    
     func setupDetailView() {
         detailView.codeTableView.dataSource = self
         detailView.codeTableView.delegate = self
@@ -43,10 +44,16 @@ class ButtonDetailViewController: UIViewController {
         self.navigationItem.title = uikitData?.UIKitName
     }
     
+    @objc func startAction() { detailView.activityIndicator.startAnimating() }
+    
+    @objc func stopAction() { detailView.activityIndicator.stopAnimating() }
+    
     func setupCode() {
         switch codeTag {
         case 0:
-            detailView.button.setTitle(textData, for: .normal)
+            if let boolCheck = Bool(textData) {
+                detailView.activityIndicator.hidesWhenStopped = boolCheck
+            }
         default:
             break
         }
@@ -57,62 +64,58 @@ class ButtonDetailViewController: UIViewController {
     }
 }
 
-extension ButtonDetailViewController: UITableViewDataSource {
+extension ActivityIndicatorViewDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let functionCount: Int = (uikitCodeData?.UIKitFunction.count)! + (uikitButtonData?.UIKitFunction.count)!
-        
-        return functionCount    }
+
+        return functionCount
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row <= (uikitCodeData?.UIKitFunction.count)! - 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CodeCell", for: indexPath) as! DetailTableViewCell
-            
+
             cell.label.text = uikitCodeData?.UIKitFunction[indexPath.row]
             cell.textField.placeholder = uikitCodeData?.UIKitFunctionType[indexPath.row]
-            cell.equalLabel.text = ""
             cell.textField.tag = indexPath.row
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             cell.textField.delegate = self
             
+            if uikitCodeData?.UIKitFunction[indexPath.row] == "switch.setOn" {
+                cell.equalLabel.text = ""
+            }
+
             return cell
         } else if indexPath.row >= (uikitCodeData?.UIKitFunction.count)! {
             let bCell = tableView.dequeueReusableCell(withIdentifier: "ButtonCell", for: indexPath) as! DetailButtonTableViewCell
             bCell.label.text = uikitButtonData?.UIKitFunction[indexPath.row - (uikitCodeData?.UIKitFunction.count)!]
             bCell.button.setTitle(uikitButtonData?.UIKitFunctionType[indexPath.row - (uikitCodeData?.UIKitFunction.count)!], for: .normal)
-            bCell.equalLabel.text = ""
             bCell.selectionStyle = .none
             bCell.backgroundColor = .clear
-            
+
             switch uikitButtonData?.UIKitFunction[indexPath.row - (uikitCodeData?.UIKitFunction.count)!] {
-            case "button.setTitleColor":
-                let red = UIAction(title: "red", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.setTitleColor(.red, for: .normal) })
-                let green = UIAction(title: "green", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.setTitleColor(.green, for: .normal) })
-                let blue = UIAction(title: "blue", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.setTitleColor(.blue, for: .normal) })
-                let gray = UIAction(title: "gray", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.setTitleColor(.gray, for: .normal) })
-                let white = UIAction(title: "white", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.setTitleColor(.white, for: .normal) })
-                let black = UIAction(title: "black", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.setTitleColor(.black, for: .normal) })
-                bCell.button.menu = UIMenu(title: "UIColor",
+            case "activityIndicatorView.startAnimating":
+                bCell.equalLabel.text = ""
+                bCell.button.addTarget(self, action: #selector(startAction), for: .touchUpInside)
+            case "activityIndicatorView.stopAnimating":
+                bCell.equalLabel.text = ""
+                bCell.button.addTarget(self, action: #selector(stopAction), for: .touchUpInside)
+            case "activityIndicatorView.style":
+                let large = UIAction(title: "large", image: UIImage(systemName: ""), handler: { _ in self.detailView.activityIndicator.style = .large })
+                let medium = UIAction(title: "medium", image: UIImage(systemName: ""), handler: { _ in self.detailView.activityIndicator.style = .medium })
+                bCell.button.menu = UIMenu(title: "Style",
                                              image: UIImage(systemName: ""),
                                              identifier: nil,
                                              options: .displayInline,
-                                           children: [red, green, blue, gray, white, black])
-            case "button.setImage":
-                let Image = UIAction(title: "Image", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.setImage(UIImage(named: "Image")?.withRenderingMode(.alwaysOriginal), for: .normal) })
-                let none = UIAction(title: "none", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.setImage(UIImage(named: ""), for: .normal) })
-                bCell.button.menu = UIMenu(title: "UIImage",
-                                             image: UIImage(systemName: ""),
-                                             identifier: nil,
-                                             options: .displayInline,
-                                           children: [Image, none])
-            case "button.backgroundColor":
-                bCell.equalLabel.text = "="
-                let red = UIAction(title: "red", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.backgroundColor = .red })
-                let green = UIAction(title: "green", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.backgroundColor = .green })
-                let blue = UIAction(title: "blue", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.backgroundColor = .blue })
-                let gray = UIAction(title: "gray", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.backgroundColor = .gray })
-                let white = UIAction(title: "white", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.backgroundColor = .white })
-                let black = UIAction(title: "black", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.backgroundColor = .black})
+                                           children: [large, medium])
+            case "activityIndicatorView.color":
+                let red = UIAction(title: "red", image: UIImage(systemName: ""), handler: { _ in self.detailView.activityIndicator.color = .red })
+                let green = UIAction(title: "green", image: UIImage(systemName: ""), handler: { _ in self.detailView.activityIndicator.color = .green })
+                let blue = UIAction(title: "blue", image: UIImage(systemName: ""), handler: { _ in self.detailView.activityIndicator.color = .blue })
+                let gray = UIAction(title: "gray", image: UIImage(systemName: ""), handler: { _ in self.detailView.activityIndicator.color = .gray })
+                let white = UIAction(title: "white", image: UIImage(systemName: ""), handler: { _ in self.detailView.activityIndicator.color = .white })
+                let black = UIAction(title: "black", image: UIImage(systemName: ""), handler: { _ in self.detailView.activityIndicator.color = .black })
                 bCell.button.menu = UIMenu(title: "UIColor",
                                              image: UIImage(systemName: ""),
                                              identifier: nil,
@@ -121,25 +124,23 @@ extension ButtonDetailViewController: UITableViewDataSource {
             default:
                 break
             }
-            
+
             return bCell
         }
-        
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "CodeCell") as! DetailTableViewCell
-        
+
         return cell
     }
-    
-    
 }
 
-extension ButtonDetailViewController: UITableViewDelegate {
+extension ActivityIndicatorViewDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
 }
 
-extension ButtonDetailViewController: UITextFieldDelegate {
+extension ActivityIndicatorViewDetailViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)

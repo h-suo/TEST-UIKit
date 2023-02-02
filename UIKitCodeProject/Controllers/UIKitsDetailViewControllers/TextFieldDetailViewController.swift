@@ -127,8 +127,6 @@ extension TextFieldDetailViewController: UITableViewDataSource {
             return bCell
         }
 
-
-
         let cell = tableView.dequeueReusableCell(withIdentifier: "CodeCell") as! DetailTableViewCell
 
         return cell
