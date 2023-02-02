@@ -19,8 +19,8 @@ class DataManager {
             UIKits(UIKitImage: UIImage(named: "Button"), UIKitName: "Button"),
             UIKits(UIKitImage: UIImage(named: "Text Field"), UIKitName: "Text Field"),
             UIKits(UIKitImage: UIImage(named: "Switch"), UIKitName: "Switch"),
-            UIKits(UIKitImage: UIImage(named: "Segmented Control"), UIKitName: "Segmented Control"),
             UIKits(UIKitImage: UIImage(named: "Slider"), UIKitName: "Slider"),
+            UIKits(UIKitImage: UIImage(named: "Segmented Control"), UIKitName: "Segmented Control"),
             UIKits(UIKitImage: UIImage(named: "Stepper"), UIKitName: "Stepper"),
             UIKits(UIKitImage: UIImage(named: "Picker View"), UIKitName: "Picker View"),
             UIKits(UIKitImage: UIImage(named: "Progress View"), UIKitName: "Progress View"),
@@ -36,6 +36,7 @@ class DataManager {
             UIKitsCodeFunction(UIKitName: "Button", UIKitFunction: ["button.setTitle"], UIKitFunctionType: ["String?"]),
             UIKitsCodeFunction(UIKitName: "TextField", UIKitFunction: ["textField.text","textField.placeholder"], UIKitFunctionType: ["String?", "String?"]),
             UIKitsCodeFunction(UIKitName: "Switch", UIKitFunction: ["switch.isOn", "switch.setOn"], UIKitFunctionType: ["Bool", "Bool"]),
+            UIKitsCodeFunction(UIKitName: "Slider", UIKitFunction: ["slider.maximumValue", "slider.minimumValue"], UIKitFunctionType: ["Float", "Float"]),
         ]
     }
     
@@ -45,6 +46,7 @@ class DataManager {
             UIKitsButtonFunction(UIKitName: "Label", UIKitFunction: [ "button.setTitleColor", "button.setImage", "button.backgroundColor"], UIKitFunctionType: ["UIColor?", "UIImage?", "UIColor?"]),
             UIKitsButtonFunction(UIKitName: "TextField", UIKitFunction: [ "textField.textColor", "textField.BorderStyle", "textField.backgroundColor"], UIKitFunctionType: ["UIColor?", "Style", "UIColor?"]),
             UIKitsButtonFunction(UIKitName: "Switch", UIKitFunction: ["switch.thumbTintColor", "switch.onTintColor"], UIKitFunctionType: ["UIColor?", "UIColor?"]),
+            UIKitsButtonFunction(UIKitName: "Slider", UIKitFunction: ["slider.thumbTintColor", "slider.maximumTrackTintColor", "slider.minimumTrackTintColor"], UIKitFunctionType: ["UIColor?", "UIColor?", "UIColor?"]),
         ]
     }
     

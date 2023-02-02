@@ -82,5 +82,4 @@ class TextFieldDetailView: UIView {
             make.top.equalTo(actionView.snp.bottom).offset(40)
         }
     }
-    
 }

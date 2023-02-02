@@ -52,7 +52,8 @@ class SwitchDetailViewController: UIViewController {
         case 1:
             if let boolCheck = Bool(textData) {
                 detailView.switchControl.setOn(boolCheck, animated: true)
-            }        default:
+            }
+        default:
             break
         }
     }

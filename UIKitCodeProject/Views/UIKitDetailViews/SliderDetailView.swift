@@ -1,5 +1,5 @@
 //
-//  SwitchDetailView.swift
+//  SliderDetailView.swift
 //  UIKitCodeProject
 //
 //  Created by 표현수 on 2023/02/02.
@@ -7,17 +7,23 @@
 
 import UIKit
 
-class SwitchDetailView: UIView {
+class SliderDetailView: UIView {
     
-    let switchControl: UISwitch = {
-        let sc = UISwitch()
+    let slider: UISlider = {
+        let sd = UISlider()
         
-        return sc
+        return sd
+    }()
+    
+    let label: UILabel = {
+        let lab = UILabel()
+        
+        return lab
     }()
     
     let setupLabel: UILabel = {
         let lab = UILabel()
-        lab.text = "switch = UISwitch()"
+        lab.text = "slider = UISlider()"
         lab.font = .systemFont(ofSize: 16)
         lab.textColor = .gray
         
@@ -47,7 +53,8 @@ class SwitchDetailView: UIView {
     
     func setupStackView() {
         
-        self.actionView.addSubview(switchControl)
+        self.actionView.addSubview(label)
+        self.actionView.addSubview(slider)
         self.addSubview(setupLabel)
         self.addSubview(actionView)
         self.addSubview(codeTableView)
@@ -67,7 +74,13 @@ class SwitchDetailView: UIView {
             make.height.equalTo(200)
         }
         
-        switchControl.snp.makeConstraints { make in
+        label.snp.makeConstraints { make in
+            make.centerX.equalTo(actionView)
+            make.bottom.equalTo(slider.snp.top).offset(-20)
+        }
+        
+        slider.snp.makeConstraints { make in
+            make.width.equalTo(140)
             make.centerX.centerY.equalTo(actionView)
         }
         setupLabel.snp.makeConstraints { make in
