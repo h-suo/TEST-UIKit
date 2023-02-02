@@ -1,15 +1,15 @@
 //
-//  TextFieldDetailViewController.swift
+//  SwitchDetailViewController.swift
 //  UIKitCodeProject
 //
-//  Created by 표현수 on 2023/01/31.
+//  Created by 표현수 on 2023/02/02.
 //
 
 import UIKit
 
-class TextFieldDetailViewController: UIViewController {
+class SwitchDetailViewController: UIViewController {
 
-    private var detailView = TextFieldDetailView()
+    private var detailView = SwitchDetailView()
     
     var uikitData: UIKits?
     var uikitCodeData: UIKitsCodeFunction?
@@ -46,10 +46,13 @@ class TextFieldDetailViewController: UIViewController {
     func setupCode() {
         switch codeTag {
         case 0:
-            self.detailView.textField.text = textData
+            if let boolCheck = Bool(textData) {
+                detailView.switchControl.isOn = boolCheck
+            }
         case 1:
-            self.detailView.textField.placeholder = textData
-        default:
+            if let boolCheck = Bool(textData) {
+                detailView.switchControl.setOn(boolCheck, animated: true)
+            }        default:
             break
         }
     }
@@ -59,7 +62,7 @@ class TextFieldDetailViewController: UIViewController {
     }
 }
 
-extension TextFieldDetailViewController: UITableViewDataSource {
+extension SwitchDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let functionCount: Int = (uikitCodeData?.UIKitFunction.count)! + (uikitButtonData?.UIKitFunction.count)!
 
@@ -76,6 +79,10 @@ extension TextFieldDetailViewController: UITableViewDataSource {
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             cell.textField.delegate = self
+            
+            if uikitCodeData?.UIKitFunction[indexPath.row] == "switch.setOn" {
+                cell.equalLabel.text = ""
+            }
 
             return cell
         } else if indexPath.row >= (uikitCodeData?.UIKitFunction.count)! {
@@ -86,35 +93,25 @@ extension TextFieldDetailViewController: UITableViewDataSource {
             bCell.backgroundColor = .clear
 
             switch uikitButtonData?.UIKitFunction[indexPath.row - (uikitCodeData?.UIKitFunction.count)!] {
-            case "textField.textColor":
-                let red = UIAction(title: "red", image: UIImage(systemName: ""), handler: { _ in self.detailView.textField.textColor = .red })
-                let green = UIAction(title: "green", image: UIImage(systemName: ""), handler: { _ in self.detailView.textField.textColor = .green })
-                let blue = UIAction(title: "blue", image: UIImage(systemName: ""), handler: { _ in self.detailView.textField.textColor = .blue })
-                let gray = UIAction(title: "gray", image: UIImage(systemName: ""), handler: { _ in self.detailView.textField.textColor = .gray })
-                let white = UIAction(title: "white", image: UIImage(systemName: ""), handler: { _ in self.detailView.textField.textColor = .white })
-                let black = UIAction(title: "black", image: UIImage(systemName: ""), handler: { _ in self.detailView.textField.textColor = .black })
+            case "switch.thumbTintColor":
+                let red = UIAction(title: "red", image: UIImage(systemName: ""), handler: { _ in self.detailView.switchControl.thumbTintColor = .red })
+                let green = UIAction(title: "green", image: UIImage(systemName: ""), handler: { _ in self.detailView.switchControl.thumbTintColor = .green })
+                let blue = UIAction(title: "blue", image: UIImage(systemName: ""), handler: { _ in self.detailView.switchControl.thumbTintColor = .blue })
+                let gray = UIAction(title: "gray", image: UIImage(systemName: ""), handler: { _ in self.detailView.switchControl.thumbTintColor = .gray })
+                let white = UIAction(title: "white", image: UIImage(systemName: ""), handler: { _ in self.detailView.switchControl.thumbTintColor = .white })
+                let black = UIAction(title: "black", image: UIImage(systemName: ""), handler: { _ in self.detailView.switchControl.thumbTintColor = .black })
                 bCell.button.menu = UIMenu(title: "UIColor",
                                              image: UIImage(systemName: ""),
                                              identifier: nil,
                                              options: .displayInline,
                                            children: [red, green, blue, gray, white, black])
-            case "textField.BorderStyle":
-                let none = UIAction(title: "none", image: UIImage(systemName: ""), handler: { _ in self.detailView.textField.borderStyle = .none })
-                let roundedRect = UIAction(title: "roundedRect", image: UIImage(systemName: ""), handler: { _ in self.detailView.textField.borderStyle = .roundedRect })
-                let bezel = UIAction(title: "bezel", image: UIImage(systemName: ""), handler: { _ in self.detailView.textField.borderStyle = .bezel })
-                let line = UIAction(title: "line", image: UIImage(systemName: ""), handler: { _ in self.detailView.textField.borderStyle = .line })
-                bCell.button.menu = UIMenu(title: "Style",
-                                             image: UIImage(systemName: ""),
-                                             identifier: nil,
-                                             options: .displayInline,
-                                           children: [none, roundedRect, bezel, line])
-            case "textField.backgroundColor":
-                let red = UIAction(title: "red", image: UIImage(systemName: ""), handler: { _ in self.detailView.textField.backgroundColor = .red })
-                let green = UIAction(title: "green", image: UIImage(systemName: ""), handler: { _ in self.detailView.textField.backgroundColor = .green })
-                let blue = UIAction(title: "blue", image: UIImage(systemName: ""), handler: { _ in self.detailView.textField.backgroundColor = .blue })
-                let gray = UIAction(title: "gray", image: UIImage(systemName: ""), handler: { _ in self.detailView.textField.backgroundColor = .gray })
-                let white = UIAction(title: "white", image: UIImage(systemName: ""), handler: { _ in self.detailView.textField.backgroundColor = .white })
-                let black = UIAction(title: "black", image: UIImage(systemName: ""), handler: { _ in self.detailView.textField.backgroundColor = .black})
+            case "switch.onTintColor":
+                let red = UIAction(title: "red", image: UIImage(systemName: ""), handler: { _ in self.detailView.switchControl.onTintColor = .red })
+                let green = UIAction(title: "green", image: UIImage(systemName: ""), handler: { _ in self.detailView.switchControl.onTintColor = .green })
+                let blue = UIAction(title: "blue", image: UIImage(systemName: ""), handler: { _ in self.detailView.switchControl.onTintColor = .blue })
+                let gray = UIAction(title: "gray", image: UIImage(systemName: ""), handler: { _ in self.detailView.switchControl.onTintColor = .gray })
+                let white = UIAction(title: "white", image: UIImage(systemName: ""), handler: { _ in self.detailView.switchControl.onTintColor = .white })
+                let black = UIAction(title: "black", image: UIImage(systemName: ""), handler: { _ in self.detailView.switchControl.onTintColor = .black })
                 bCell.button.menu = UIMenu(title: "UIColor",
                                              image: UIImage(systemName: ""),
                                              identifier: nil,
@@ -135,13 +132,13 @@ extension TextFieldDetailViewController: UITableViewDataSource {
     }
 }
 
-extension TextFieldDetailViewController: UITableViewDelegate {
+extension SwitchDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
 }
 
-extension TextFieldDetailViewController: UITextFieldDelegate {
+extension SwitchDetailViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)

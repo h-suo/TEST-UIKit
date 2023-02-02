@@ -56,10 +56,10 @@ class DetailTableViewCell: UITableViewCell {
         label.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().offset(12)
+            make.width.equalTo(176)
         }
         equalLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalTo(label.snp.trailing).offset(12)
             make.trailing.equalTo(textField.snp.leading).offset(-12)
         }
         textField.snp.makeConstraints { make in

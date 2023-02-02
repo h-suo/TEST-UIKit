@@ -111,6 +111,13 @@ class MainTableViewController: UITableViewController {
             detailVC.uikitButtonData = uikitButtonList[indexPath.row]
             
             navigationController?.pushViewController(detailVC, animated: true)
+        case "Switch":
+            let detailVC = SwitchDetailViewController()
+            detailVC.uikitData = uikitList[indexPath.row]
+            detailVC.uikitCodeData = uikitCodeList[indexPath.row]
+            detailVC.uikitButtonData = uikitButtonList[indexPath.row]
+            
+            navigationController?.pushViewController(detailVC, animated: true)
         default:
             break
         }

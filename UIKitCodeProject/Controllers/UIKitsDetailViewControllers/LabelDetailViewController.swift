@@ -86,8 +86,8 @@ extension LabelDetailViewController: UITableViewDataSource {
             bCell.selectionStyle = .none
             bCell.backgroundColor = .clear
             
-            switch uikitButtonData?.UIKitFunctionType[indexPath.row - (uikitCodeData?.UIKitFunction.count)!] {
-            case "UIFont!":
+            switch uikitButtonData?.UIKitFunction[indexPath.row - (uikitCodeData?.UIKitFunction.count)!] {
+            case "label.font":
                 let systemFont = UIAction(title: "systemFont", image: UIImage(systemName: ""), handler: { _ in self.detailView.label.font = .systemFont(ofSize: 18) })
                 let boldSystemFont = UIAction(title: "boldSystemFont", image: UIImage(systemName: ""), handler: { _ in self.detailView.label.font = .boldSystemFont(ofSize: 18) })
                 bCell.button.menu = UIMenu(title: "UIFont",
@@ -95,7 +95,7 @@ extension LabelDetailViewController: UITableViewDataSource {
                                              identifier: nil,
                                              options: .displayInline,
                                            children: [systemFont, boldSystemFont])
-            case "UIColor!":
+            case "label.textColor":
                 let red = UIAction(title: "red", image: UIImage(systemName: ""), handler: { _ in self.detailView.label.textColor = .red })
                 let green = UIAction(title: "green", image: UIImage(systemName: ""), handler: { _ in self.detailView.label.textColor = .green })
                 let blue = UIAction(title: "blue", image: UIImage(systemName: ""), handler: { _ in self.detailView.label.textColor = .blue })
@@ -107,7 +107,7 @@ extension LabelDetailViewController: UITableViewDataSource {
                                              identifier: nil,
                                              options: .displayInline,
                                            children: [red, green, blue, gray, white, black])
-            case "NSTextAlignment":
+            case "label.textAlignment":
                 let center = UIAction(title: "center", image: UIImage(systemName: ""), handler: { _ in self.detailView.label.textAlignment = .center })
                 let justified = UIAction(title: "justified", image: UIImage(systemName: ""), handler: { _ in self.detailView.label.textAlignment = .justified })
                 let left = UIAction(title: "left", image: UIImage(systemName: ""), handler: { _ in self.detailView.label.textAlignment = .left })
@@ -118,6 +118,18 @@ extension LabelDetailViewController: UITableViewDataSource {
                                              identifier: nil,
                                              options: .displayInline,
                                            children: [center, justified, left, natural, right])
+            case "label.backgroundColor":
+                let red = UIAction(title: "red", image: UIImage(systemName: ""), handler: { _ in self.detailView.label.backgroundColor = .red })
+                let green = UIAction(title: "green", image: UIImage(systemName: ""), handler: { _ in self.detailView.label.backgroundColor = .green })
+                let blue = UIAction(title: "blue", image: UIImage(systemName: ""), handler: { _ in self.detailView.label.backgroundColor = .blue })
+                let gray = UIAction(title: "gray", image: UIImage(systemName: ""), handler: { _ in self.detailView.label.backgroundColor = .gray })
+                let white = UIAction(title: "white", image: UIImage(systemName: ""), handler: { _ in self.detailView.label.backgroundColor = .white })
+                let black = UIAction(title: "black", image: UIImage(systemName: ""), handler: { _ in self.detailView.label.backgroundColor = .black})
+                bCell.button.menu = UIMenu(title: "UIColor",
+                                             image: UIImage(systemName: ""),
+                                             identifier: nil,
+                                             options: .displayInline,
+                                           children: [red, green, blue, gray, white, black])
             default:
                 break
             }

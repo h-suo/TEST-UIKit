@@ -84,8 +84,8 @@ extension ButtonDetailViewController: UITableViewDataSource {
             bCell.selectionStyle = .none
             bCell.backgroundColor = .clear
             
-            switch uikitButtonData?.UIKitFunctionType[indexPath.row - (uikitCodeData?.UIKitFunction.count)!] {
-            case "UIColor?":
+            switch uikitButtonData?.UIKitFunction[indexPath.row - (uikitCodeData?.UIKitFunction.count)!] {
+            case "button.setTitleColor":
                 let red = UIAction(title: "red", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.setTitleColor(.red, for: .normal) })
                 let green = UIAction(title: "green", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.setTitleColor(.green, for: .normal) })
                 let blue = UIAction(title: "blue", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.setTitleColor(.blue, for: .normal) })
@@ -97,7 +97,7 @@ extension ButtonDetailViewController: UITableViewDataSource {
                                              identifier: nil,
                                              options: .displayInline,
                                            children: [red, green, blue, gray, white, black])
-            case "UIImage?":
+            case "button.setImage":
                 let Image = UIAction(title: "Image", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.setImage(UIImage(named: "Image")?.withRenderingMode(.alwaysOriginal), for: .normal) })
                 let none = UIAction(title: "none", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.setImage(UIImage(named: ""), for: .normal) })
                 bCell.button.menu = UIMenu(title: "UIImage",
@@ -105,6 +105,19 @@ extension ButtonDetailViewController: UITableViewDataSource {
                                              identifier: nil,
                                              options: .displayInline,
                                            children: [Image, none])
+            case "button.backgroundColor":
+                bCell.equalLabel.text = "="
+                let red = UIAction(title: "red", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.backgroundColor = .red })
+                let green = UIAction(title: "green", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.backgroundColor = .green })
+                let blue = UIAction(title: "blue", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.backgroundColor = .blue })
+                let gray = UIAction(title: "gray", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.backgroundColor = .gray })
+                let white = UIAction(title: "white", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.backgroundColor = .white })
+                let black = UIAction(title: "black", image: UIImage(systemName: ""), handler: { _ in self.detailView.button.backgroundColor = .black})
+                bCell.button.menu = UIMenu(title: "UIColor",
+                                             image: UIImage(systemName: ""),
+                                             identifier: nil,
+                                             options: .displayInline,
+                                           children: [red, green, blue, gray, white, black])
             default:
                 break
             }

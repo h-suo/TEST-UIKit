@@ -56,10 +56,10 @@ class DetailButtonTableViewCell: UITableViewCell {
         label.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().offset(12)
+            make.width.equalTo(172)
         }
         equalLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalTo(label.snp.trailing).offset(12)
             make.trailing.equalTo(button.snp.leading).offset(-12)
         }
         button.snp.makeConstraints { make in

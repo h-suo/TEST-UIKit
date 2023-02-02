@@ -34,11 +34,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
+            <point key="canvasLocation" x="185" y="133"/>
         </scene>
     </scenes>
     <resources>
-        <image name="icon" width="1024" height="1024"/>
+        <image name="icon" width="512" height="512"/>
         <namedColor name=".black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
