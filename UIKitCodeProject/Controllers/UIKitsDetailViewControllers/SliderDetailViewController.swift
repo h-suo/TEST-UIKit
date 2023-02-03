@@ -92,10 +92,6 @@ extension SliderDetailViewController: UITableViewDataSource {
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             cell.textField.delegate = self
-            
-            if uikitCodeData?.UIKitFunction[indexPath.row] == "switch.setOn" {
-                cell.equalLabel.text = ""
-            }
 
             return cell
         } else if indexPath.row >= (uikitCodeData?.UIKitFunction.count)! {

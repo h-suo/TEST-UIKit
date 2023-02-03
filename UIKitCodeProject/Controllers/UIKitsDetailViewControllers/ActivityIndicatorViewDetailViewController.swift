@@ -30,7 +30,6 @@ class ActivityIndicatorViewDetailViewController: UIViewController {
         setupDetailView()
     }
     
-    
     func setupDetailView() {
         detailView.codeTableView.dataSource = self
         detailView.codeTableView.delegate = self
@@ -81,10 +80,6 @@ extension ActivityIndicatorViewDetailViewController: UITableViewDataSource {
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             cell.textField.delegate = self
-            
-            if uikitCodeData?.UIKitFunction[indexPath.row] == "switch.setOn" {
-                cell.equalLabel.text = ""
-            }
 
             return cell
         } else if indexPath.row >= (uikitCodeData?.UIKitFunction.count)! {

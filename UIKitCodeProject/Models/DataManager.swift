@@ -21,10 +21,8 @@ class DataManager {
             UIKits(UIKitImage: UIImage(named: "Switch"), UIKitName: "Switch"),
             UIKits(UIKitImage: UIImage(named: "Slider"), UIKitName: "Slider"),
             UIKits(UIKitImage: UIImage(named: "Activity Indicator View"), UIKitName: "Activity Indicator View"),
-            UIKits(UIKitImage: UIImage(named: "Segmented Control"), UIKitName: "Segmented Control"),
-            UIKits(UIKitImage: UIImage(named: "Stepper"), UIKitName: "Stepper"),
-            UIKits(UIKitImage: UIImage(named: "Picker View"), UIKitName: "Picker View"),
             UIKits(UIKitImage: UIImage(named: "Progress View"), UIKitName: "Progress View"),
+            UIKits(UIKitImage: UIImage(named: "Stepper"), UIKitName: "Stepper"),
             UIKits(UIKitImage: UIImage(named: "Page Control"), UIKitName: "Page Control"),
             UIKits(UIKitImage: UIImage(named: "Color Well"), UIKitName: "Color Well")
         ]
@@ -38,6 +36,7 @@ class DataManager {
             UIKitsCodeFunction(UIKitName: "Switch", UIKitFunction: ["switch.isOn", "switch.setOn"], UIKitFunctionType: ["Bool", "Bool"]),
             UIKitsCodeFunction(UIKitName: "Slider", UIKitFunction: ["slider.maximumValue", "slider.minimumValue"], UIKitFunctionType: ["Float", "Float"]),
             UIKitsCodeFunction(UIKitName: "ActivityIndicatorView", UIKitFunction: ["activityIndicatorView.hidesWhenStopped"], UIKitFunctionType: ["Bool"]),
+            UIKitsCodeFunction(UIKitName: "ProgressView", UIKitFunction: ["progressView.progress", "progressView.setProgress"], UIKitFunctionType: ["Float", "Float"]),
         ]
     }
     
@@ -49,6 +48,7 @@ class DataManager {
             UIKitsButtonFunction(UIKitName: "Switch", UIKitFunction: ["switch.thumbTintColor", "switch.onTintColor"], UIKitFunctionType: ["UIColor?", "UIColor?"]),
             UIKitsButtonFunction(UIKitName: "Slider", UIKitFunction: ["slider.thumbTintColor", "slider.maximumTrackTintColor", "slider.minimumTrackTintColor"], UIKitFunctionType: ["UIColor?", "UIColor?", "UIColor?"]),
             UIKitsButtonFunction(UIKitName: "ActivityIndicatorView", UIKitFunction: ["activityIndicatorView.startAnimating", "activityIndicatorView.stopAnimating", "activityIndicatorView.style", "activityIndicatorView.color"], UIKitFunctionType: ["()", "()", "Style", "UIColor!"]),
+            UIKitsButtonFunction(UIKitName: "ProgressView", UIKitFunction: ["progressView.progressViewStyle", "progressView.progressTintColor", "progressView.trackTintColor"], UIKitFunctionType: ["Style", "UIColor?", "UIColor?"]),
         ]
     }
     
