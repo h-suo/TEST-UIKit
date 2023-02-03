@@ -1,24 +1,29 @@
 //
-//  ButtonDetailView.swift
+//  StepperDetailView.swift
 //  UIKitCodeProject
 //
-//  Created by 표현수 on 2023/01/24.
+//  Created by 표현수 on 2023/02/03.
 //
 
 import UIKit
 
-class ButtonDetailView: UIView {
+class StepperDetailView: UIView {
     
-    let button: UIButton = {
-        let bt = UIButton(type: .system)
-        bt.setTitle("Button", for: .normal)
+    let stepper: UIStepper = {
+        let sp = UIStepper()
         
-        return bt
+        return sp
+    }()
+    
+    let label: UILabel = {
+        let lab = UILabel()
+        
+        return lab
     }()
     
     let setupLabel: UILabel = {
         let lab = UILabel()
-        lab.text = "button = UIButton(type: .system)"
+        lab.text = "stepper = UIStepper()"
         lab.font = .systemFont(ofSize: 16)
         lab.textColor = .gray
         
@@ -48,7 +53,8 @@ class ButtonDetailView: UIView {
     
     func setupStackView() {
         
-        self.actionView.addSubview(button)
+        self.actionView.addSubview(stepper)
+        self.actionView.addSubview(label)
         self.addSubview(setupLabel)
         self.addSubview(actionView)
         self.addSubview(codeTableView)
@@ -68,9 +74,12 @@ class ButtonDetailView: UIView {
             make.height.equalTo(200)
         }
         
-        button.snp.makeConstraints { make in
-            make.width.equalTo(80)
-            make.height.equalTo(20)
+        label.snp.makeConstraints { make in
+            make.centerX.equalTo(actionView)
+            make.bottom.equalTo(stepper.snp.top).offset(-20)
+        }
+        
+        stepper.snp.makeConstraints { make in
             make.centerX.centerY.equalTo(actionView)
         }
         setupLabel.snp.makeConstraints { make in

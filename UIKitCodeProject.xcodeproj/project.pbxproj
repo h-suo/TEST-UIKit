@@ -22,6 +22,8 @@
 		4550192E2988B4DF006D052F /* TextFieldDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4550192D2988B4DF006D052F /* TextFieldDetailViewController.swift */; };
 		4550555A298CE97000ECBD4C /* ProgressViewDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45505559298CE97000ECBD4C /* ProgressViewDetailView.swift */; };
 		4550555C298CE9D200ECBD4C /* ProgressViewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4550555B298CE9D200ECBD4C /* ProgressViewDetailViewController.swift */; };
+		4550555E298CF7DF00ECBD4C /* StepperDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4550555D298CF7DF00ECBD4C /* StepperDetailView.swift */; };
+		45505560298CF83400ECBD4C /* StepperDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4550555F298CF83400ECBD4C /* StepperDetailViewController.swift */; };
 		4596B3832983EE2A004435D3 /* DetailButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4596B3822983EE2A004435D3 /* DetailButtonTableViewCell.swift */; };
 		459BA8C9297A82AC006AD641 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459BA8C8297A82AC006AD641 /* AppDelegate.swift */; };
 		459BA8CB297A82AC006AD641 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459BA8CA297A82AC006AD641 /* SceneDelegate.swift */; };
@@ -52,6 +54,8 @@
 		4550192D2988B4DF006D052F /* TextFieldDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDetailViewController.swift; sourceTree = "<group>"; };
 		45505559298CE97000ECBD4C /* ProgressViewDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewDetailView.swift; sourceTree = "<group>"; };
 		4550555B298CE9D200ECBD4C /* ProgressViewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewDetailViewController.swift; sourceTree = "<group>"; };
+		4550555D298CF7DF00ECBD4C /* StepperDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperDetailView.swift; sourceTree = "<group>"; };
+		4550555F298CF83400ECBD4C /* StepperDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperDetailViewController.swift; sourceTree = "<group>"; };
 		4596B3822983EE2A004435D3 /* DetailButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailButtonTableViewCell.swift; sourceTree = "<group>"; };
 		459BA8C5297A82AC006AD641 /* UIKitCodeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitCodeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		459BA8C8297A82AC006AD641 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 				4538DE0F298B956C00F168C4 /* SliderDetailView.swift */,
 				4538DE13298BB6B300F168C4 /* ActivityIndicatorViewDetailView.swift */,
 				45505559298CE97000ECBD4C /* ProgressViewDetailView.swift */,
+				4550555D298CF7DF00ECBD4C /* StepperDetailView.swift */,
 			);
 			path = UIKitDetailViews;
 			sourceTree = "<group>";
@@ -104,6 +109,7 @@
 				4538DE11298B95B900F168C4 /* SliderDetailViewController.swift */,
 				4538DE15298BB81A00F168C4 /* ActivityIndicatorViewDetailViewController.swift */,
 				4550555B298CE9D200ECBD4C /* ProgressViewDetailViewController.swift */,
+				4550555F298CF83400ECBD4C /* StepperDetailViewController.swift */,
 			);
 			path = UIKitsDetailViewControllers;
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 			files = (
 				452F8DE9297FFC5600CC94F5 /* LabelDetailViewController.swift in Sources */,
 				459BA8E2297A83AB006AD641 /* SettingViewController.swift in Sources */,
+				45505560298CF83400ECBD4C /* StepperDetailViewController.swift in Sources */,
 				452F8DE6297FF6F800CC94F5 /* ButtonDetailView.swift in Sources */,
 				4538DE16298BB81A00F168C4 /* ActivityIndicatorViewDetailViewController.swift in Sources */,
 				459BA8E5297A83DC006AD641 /* UIKitTableViewCell.swift in Sources */,
@@ -321,6 +328,7 @@
 				4538DE10298B956C00F168C4 /* SliderDetailView.swift in Sources */,
 				459BA8C9297A82AC006AD641 /* AppDelegate.swift in Sources */,
 				452F8DE4297FF6EC00CC94F5 /* LabelDetailView.swift in Sources */,
+				4550555E298CF7DF00ECBD4C /* StepperDetailView.swift in Sources */,
 				4596B3832983EE2A004435D3 /* DetailButtonTableViewCell.swift in Sources */,
 				4550192C2988B435006D052F /* TextFieldDetailView.swift in Sources */,
 				452F8DEB297FFC6100CC94F5 /* ButtonDetailViewController.swift in Sources */,

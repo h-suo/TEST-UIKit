@@ -37,6 +37,7 @@ class DataManager {
             UIKitsCodeFunction(UIKitName: "Slider", UIKitFunction: ["slider.maximumValue", "slider.minimumValue"], UIKitFunctionType: ["Float", "Float"]),
             UIKitsCodeFunction(UIKitName: "ActivityIndicatorView", UIKitFunction: ["activityIndicatorView.hidesWhenStopped"], UIKitFunctionType: ["Bool"]),
             UIKitsCodeFunction(UIKitName: "ProgressView", UIKitFunction: ["progressView.progress", "progressView.setProgress"], UIKitFunctionType: ["Float", "Float"]),
+            UIKitsCodeFunction(UIKitName: "Stepper", UIKitFunction: ["stepper.wraps", "stepper.minimumValue", "stepper.maximumValue", "stepper.stepValue"], UIKitFunctionType: ["Bool", "Double", "Double", "Double"]),
         ]
     }
     
@@ -49,6 +50,7 @@ class DataManager {
             UIKitsButtonFunction(UIKitName: "Slider", UIKitFunction: ["slider.thumbTintColor", "slider.maximumTrackTintColor", "slider.minimumTrackTintColor"], UIKitFunctionType: ["UIColor?", "UIColor?", "UIColor?"]),
             UIKitsButtonFunction(UIKitName: "ActivityIndicatorView", UIKitFunction: ["activityIndicatorView.startAnimating", "activityIndicatorView.stopAnimating", "activityIndicatorView.style", "activityIndicatorView.color"], UIKitFunctionType: ["()", "()", "Style", "UIColor!"]),
             UIKitsButtonFunction(UIKitName: "ProgressView", UIKitFunction: ["progressView.progressViewStyle", "progressView.progressTintColor", "progressView.trackTintColor"], UIKitFunctionType: ["Style", "UIColor?", "UIColor?"]),
+            UIKitsButtonFunction(UIKitName: "Stepper", UIKitFunction: [], UIKitFunctionType: []),
         ]
     }
     
