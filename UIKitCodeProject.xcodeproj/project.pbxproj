@@ -24,6 +24,10 @@
 		4550555C298CE9D200ECBD4C /* ProgressViewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4550555B298CE9D200ECBD4C /* ProgressViewDetailViewController.swift */; };
 		4550555E298CF7DF00ECBD4C /* StepperDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4550555D298CF7DF00ECBD4C /* StepperDetailView.swift */; };
 		45505560298CF83400ECBD4C /* StepperDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4550555F298CF83400ECBD4C /* StepperDetailViewController.swift */; };
+		45505562298D012800ECBD4C /* PageControlDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45505561298D012800ECBD4C /* PageControlDetailView.swift */; };
+		45505564298D019200ECBD4C /* PageControlDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45505563298D019200ECBD4C /* PageControlDetailViewController.swift */; };
+		45505566298D05A200ECBD4C /* ColorWellDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45505565298D05A200ECBD4C /* ColorWellDetailView.swift */; };
+		45505568298D05EB00ECBD4C /* ColorWellDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45505567298D05EB00ECBD4C /* ColorWellDetailViewController.swift */; };
 		4596B3832983EE2A004435D3 /* DetailButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4596B3822983EE2A004435D3 /* DetailButtonTableViewCell.swift */; };
 		459BA8C9297A82AC006AD641 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459BA8C8297A82AC006AD641 /* AppDelegate.swift */; };
 		459BA8CB297A82AC006AD641 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459BA8CA297A82AC006AD641 /* SceneDelegate.swift */; };
@@ -56,6 +60,10 @@
 		4550555B298CE9D200ECBD4C /* ProgressViewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewDetailViewController.swift; sourceTree = "<group>"; };
 		4550555D298CF7DF00ECBD4C /* StepperDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperDetailView.swift; sourceTree = "<group>"; };
 		4550555F298CF83400ECBD4C /* StepperDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperDetailViewController.swift; sourceTree = "<group>"; };
+		45505561298D012800ECBD4C /* PageControlDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlDetailView.swift; sourceTree = "<group>"; };
+		45505563298D019200ECBD4C /* PageControlDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlDetailViewController.swift; sourceTree = "<group>"; };
+		45505565298D05A200ECBD4C /* ColorWellDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWellDetailView.swift; sourceTree = "<group>"; };
+		45505567298D05EB00ECBD4C /* ColorWellDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWellDetailViewController.swift; sourceTree = "<group>"; };
 		4596B3822983EE2A004435D3 /* DetailButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailButtonTableViewCell.swift; sourceTree = "<group>"; };
 		459BA8C5297A82AC006AD641 /* UIKitCodeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitCodeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		459BA8C8297A82AC006AD641 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +103,8 @@
 				4538DE13298BB6B300F168C4 /* ActivityIndicatorViewDetailView.swift */,
 				45505559298CE97000ECBD4C /* ProgressViewDetailView.swift */,
 				4550555D298CF7DF00ECBD4C /* StepperDetailView.swift */,
+				45505561298D012800ECBD4C /* PageControlDetailView.swift */,
+				45505565298D05A200ECBD4C /* ColorWellDetailView.swift */,
 			);
 			path = UIKitDetailViews;
 			sourceTree = "<group>";
@@ -110,6 +120,8 @@
 				4538DE15298BB81A00F168C4 /* ActivityIndicatorViewDetailViewController.swift */,
 				4550555B298CE9D200ECBD4C /* ProgressViewDetailViewController.swift */,
 				4550555F298CF83400ECBD4C /* StepperDetailViewController.swift */,
+				45505563298D019200ECBD4C /* PageControlDetailViewController.swift */,
+				45505567298D05EB00ECBD4C /* ColorWellDetailViewController.swift */,
 			);
 			path = UIKitsDetailViewControllers;
 			sourceTree = "<group>";
@@ -318,8 +330,10 @@
 			files = (
 				452F8DE9297FFC5600CC94F5 /* LabelDetailViewController.swift in Sources */,
 				459BA8E2297A83AB006AD641 /* SettingViewController.swift in Sources */,
+				45505562298D012800ECBD4C /* PageControlDetailView.swift in Sources */,
 				45505560298CF83400ECBD4C /* StepperDetailViewController.swift in Sources */,
 				452F8DE6297FF6F800CC94F5 /* ButtonDetailView.swift in Sources */,
+				45505568298D05EB00ECBD4C /* ColorWellDetailViewController.swift in Sources */,
 				4538DE16298BB81A00F168C4 /* ActivityIndicatorViewDetailViewController.swift in Sources */,
 				459BA8E5297A83DC006AD641 /* UIKitTableViewCell.swift in Sources */,
 				459BA8E8297AC7AB006AD641 /* UIKits.swift in Sources */,
@@ -336,9 +350,11 @@
 				4538DE12298B95B900F168C4 /* SliderDetailViewController.swift in Sources */,
 				4538DE0E298B7F6500F168C4 /* SwitchDetailViewController.swift in Sources */,
 				459BA8E0297A8384006AD641 /* MainTableViewController.swift in Sources */,
+				45505566298D05A200ECBD4C /* ColorWellDetailView.swift in Sources */,
 				452F8DE1297F9F1900CC94F5 /* DetailTableViewCell.swift in Sources */,
 				459BA8CB297A82AC006AD641 /* SceneDelegate.swift in Sources */,
 				4550555A298CE97000ECBD4C /* ProgressViewDetailView.swift in Sources */,
+				45505564298D019200ECBD4C /* PageControlDetailViewController.swift in Sources */,
 				4538DE0C298B7D5900F168C4 /* SwitchDetailView.swift in Sources */,
 				4538DE14298BB6B300F168C4 /* ActivityIndicatorViewDetailView.swift in Sources */,
 			);
@@ -487,6 +503,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -515,6 +532,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

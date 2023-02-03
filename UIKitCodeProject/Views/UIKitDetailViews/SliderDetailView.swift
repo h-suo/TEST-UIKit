@@ -73,12 +73,10 @@ class SliderDetailView: UIView {
             make.top.equalTo(safeAreaLayoutGuide).offset(20)
             make.height.equalTo(200)
         }
-        
         label.snp.makeConstraints { make in
             make.centerX.equalTo(actionView)
             make.bottom.equalTo(slider.snp.top).offset(-20)
         }
-        
         slider.snp.makeConstraints { make in
             make.width.equalTo(140)
             make.centerX.centerY.equalTo(actionView)

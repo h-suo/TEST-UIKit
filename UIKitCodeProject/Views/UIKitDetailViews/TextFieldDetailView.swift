@@ -68,7 +68,6 @@ class TextFieldDetailView: UIView {
             make.top.equalTo(safeAreaLayoutGuide).offset(20)
             make.height.equalTo(200)
         }
-        
         textField.snp.makeConstraints { make in
             make.width.equalTo(120)
             make.centerX.centerY.equalTo(actionView)

@@ -1,5 +1,5 @@
 //
-//  StepperDetailView.swift
+//  PageControlDetailView.swift
 //  UIKitCodeProject
 //
 //  Created by 표현수 on 2023/02/03.
@@ -7,18 +7,14 @@
 
 import UIKit
 
-class StepperDetailView: UIView {
+class PageControlDetailView: UIView {
     
-    let stepper: UIStepper = {
-        let sp = UIStepper()
+    let pageControl: UIPageControl = {
+        let pc = UIPageControl()
+        pc.numberOfPages = 3
+        pc.currentPage = 0
         
-        return sp
-    }()
-    
-    let label: UILabel = {
-        let lab = UILabel()
-        
-        return lab
+        return pc
     }()
     
     let setupLabel: UILabel = {
@@ -53,8 +49,7 @@ class StepperDetailView: UIView {
     
     func setupStackView() {
         
-        self.actionView.addSubview(stepper)
-        self.actionView.addSubview(label)
+        self.actionView.addSubview(pageControl)
         self.addSubview(setupLabel)
         self.addSubview(actionView)
         self.addSubview(codeTableView)
@@ -73,11 +68,7 @@ class StepperDetailView: UIView {
             make.top.equalTo(safeAreaLayoutGuide).offset(20)
             make.height.equalTo(200)
         }
-        label.snp.makeConstraints { make in
-            make.centerX.equalTo(actionView)
-            make.bottom.equalTo(stepper.snp.top).offset(-20)
-        }
-        stepper.snp.makeConstraints { make in
+        pageControl.snp.makeConstraints { make in
             make.centerX.centerY.equalTo(actionView)
         }
         setupLabel.snp.makeConstraints { make in

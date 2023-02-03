@@ -66,7 +66,6 @@ class ActivityIndicatorViewDetailView: UIView {
             make.top.equalTo(safeAreaLayoutGuide).offset(20)
             make.height.equalTo(200)
         }
-        
         activityIndicator.snp.makeConstraints { make in
             make.centerX.centerY.equalTo(actionView)
         }

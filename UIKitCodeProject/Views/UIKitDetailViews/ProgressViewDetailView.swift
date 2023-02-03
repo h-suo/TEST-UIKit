@@ -66,7 +66,6 @@ class ProgressViewDetailView: UIView {
             make.top.equalTo(safeAreaLayoutGuide).offset(20)
             make.height.equalTo(200)
         }
-        
         progressView.snp.makeConstraints { make in
             make.width.equalTo(140)
             make.centerX.centerY.equalTo(actionView)

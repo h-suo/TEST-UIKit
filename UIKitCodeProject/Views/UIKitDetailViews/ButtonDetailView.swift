@@ -67,7 +67,6 @@ class ButtonDetailView: UIView {
             make.top.equalTo(safeAreaLayoutGuide).offset(20)
             make.height.equalTo(200)
         }
-        
         button.snp.makeConstraints { make in
             make.width.equalTo(80)
             make.height.equalTo(20)

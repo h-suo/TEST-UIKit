@@ -38,6 +38,9 @@ class DataManager {
             UIKitsCodeFunction(UIKitName: "ActivityIndicatorView", UIKitFunction: ["activityIndicatorView.hidesWhenStopped"], UIKitFunctionType: ["Bool"]),
             UIKitsCodeFunction(UIKitName: "ProgressView", UIKitFunction: ["progressView.progress", "progressView.setProgress"], UIKitFunctionType: ["Float", "Float"]),
             UIKitsCodeFunction(UIKitName: "Stepper", UIKitFunction: ["stepper.wraps", "stepper.minimumValue", "stepper.maximumValue", "stepper.stepValue"], UIKitFunctionType: ["Bool", "Double", "Double", "Double"]),
+            UIKitsCodeFunction(UIKitName: "PageControl", UIKitFunction: ["pageControl.currentPage", "pageControl.numberOfPages", "pageControl.hidesForSinglePage"], UIKitFunctionType: ["Int", "Int", "Bool"]),
+            UIKitsCodeFunction(UIKitName: "ColorWell", UIKitFunction: ["colorWell.title", "colorWell.supportsAlpha"], UIKitFunctionType: ["String?", "Bool"]),
+
         ]
     }
     
@@ -51,6 +54,8 @@ class DataManager {
             UIKitsButtonFunction(UIKitName: "ActivityIndicatorView", UIKitFunction: ["activityIndicatorView.startAnimating", "activityIndicatorView.stopAnimating", "activityIndicatorView.style", "activityIndicatorView.color"], UIKitFunctionType: ["()", "()", "Style", "UIColor!"]),
             UIKitsButtonFunction(UIKitName: "ProgressView", UIKitFunction: ["progressView.progressViewStyle", "progressView.progressTintColor", "progressView.trackTintColor"], UIKitFunctionType: ["Style", "UIColor?", "UIColor?"]),
             UIKitsButtonFunction(UIKitName: "Stepper", UIKitFunction: [], UIKitFunctionType: []),
+            UIKitsButtonFunction(UIKitName: "PageControl", UIKitFunction: ["pageControl.pageIndicatorTintColor", "pageControl.currentPageIndicatorTintColor"], UIKitFunctionType: ["UIColor?", "UIColor?"]),
+            UIKitsButtonFunction(UIKitName: "ColorWell", UIKitFunction: ["colorWell.selectedColor"], UIKitFunctionType: ["UIColor?"]),
         ]
     }
     

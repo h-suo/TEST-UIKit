@@ -146,6 +146,20 @@ class MainTableViewController: UITableViewController {
             detailVC.uikitButtonData = uikitButtonList[indexPath.row]
             
             navigationController?.pushViewController(detailVC, animated: true)
+        case "Page Control":
+            let detailVC = PageControlDetailViewController()
+            detailVC.uikitData = uikitList[indexPath.row]
+            detailVC.uikitCodeData = uikitCodeList[indexPath.row]
+            detailVC.uikitButtonData = uikitButtonList[indexPath.row]
+            
+            navigationController?.pushViewController(detailVC, animated: true)
+        case "Color Well":
+            let detailVC = ColorWellDetailViewController()
+            detailVC.uikitData = uikitList[indexPath.row]
+            detailVC.uikitCodeData = uikitCodeList[indexPath.row]
+            detailVC.uikitButtonData = uikitButtonList[indexPath.row]
+            
+            navigationController?.pushViewController(detailVC, animated: true)
         default:
             break
         }

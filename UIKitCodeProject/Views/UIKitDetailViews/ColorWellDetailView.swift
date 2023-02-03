@@ -1,5 +1,5 @@
 //
-//  StepperDetailView.swift
+//  ColorWellDetailView.swift
 //  UIKitCodeProject
 //
 //  Created by 표현수 on 2023/02/03.
@@ -7,18 +7,12 @@
 
 import UIKit
 
-class StepperDetailView: UIView {
+class ColorWellDetailView: UIView {
     
-    let stepper: UIStepper = {
-        let sp = UIStepper()
+    let colorWell: UIColorWell = {
+        let cw = UIColorWell()
         
-        return sp
-    }()
-    
-    let label: UILabel = {
-        let lab = UILabel()
-        
-        return lab
+        return cw
     }()
     
     let setupLabel: UILabel = {
@@ -53,8 +47,7 @@ class StepperDetailView: UIView {
     
     func setupStackView() {
         
-        self.actionView.addSubview(stepper)
-        self.actionView.addSubview(label)
+        self.actionView.addSubview(colorWell)
         self.addSubview(setupLabel)
         self.addSubview(actionView)
         self.addSubview(codeTableView)
@@ -73,11 +66,7 @@ class StepperDetailView: UIView {
             make.top.equalTo(safeAreaLayoutGuide).offset(20)
             make.height.equalTo(200)
         }
-        label.snp.makeConstraints { make in
-            make.centerX.equalTo(actionView)
-            make.bottom.equalTo(stepper.snp.top).offset(-20)
-        }
-        stepper.snp.makeConstraints { make in
+        colorWell.snp.makeConstraints { make in
             make.centerX.centerY.equalTo(actionView)
         }
         setupLabel.snp.makeConstraints { make in
