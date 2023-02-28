@@ -23,8 +23,3 @@ struct UIKitsButtonFunction {
     var UIKitFunction: [String]
     var UIKitFunctionType: [String]
 }
-
-struct ButtonFunctionOptions {
-    var UIKitName: String
-
-}
