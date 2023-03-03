@@ -6,6 +6,7 @@ target 'UIKitCodeProject' do
   use_frameworks!
 
 pod 'SnapKit'
+pod 'Then'
 
   # Pods for UIKitCodeProject
 
