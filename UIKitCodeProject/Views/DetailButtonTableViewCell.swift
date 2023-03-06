@@ -6,37 +6,34 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
 class DetailButtonTableViewCell: UITableViewCell {
-    
-    let label: UILabel = {
-        let lab = UILabel()
-        lab.font = UIFont.systemFont(ofSize: 18)
-        lab.numberOfLines = 0
-        
-        return lab
-    }()
-    
-    let equalLabel: UILabel = {
-        let lab = UILabel()
-        lab.font = UIFont.systemFont(ofSize: 18)
-        lab.text = " = "
-        
-        return lab
-    }()
-    
-    let button: UIButton = {
-        let pub = UIButton(type: .system)
-        pub.showsMenuAsPrimaryAction = true
-        pub.backgroundColor = .systemFill
-        pub.layer.cornerRadius = 4
-        
-        return pub
-    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupStackView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    let label = UILabel().then {
+        $0.font = UIFont.systemFont(ofSize: 18)
+        $0.numberOfLines = 0
+    }
+    
+    let equalLabel = UILabel().then {
+        $0.font = UIFont.systemFont(ofSize: 18)
+        $0.text = " = "
+    }
+    
+    let button = UIButton().then {
+        $0.showsMenuAsPrimaryAction = true
+        $0.backgroundColor = .systemFill
+        $0.layer.cornerRadius = 4
     }
     
     func setupStackView() {
@@ -46,10 +43,6 @@ class DetailButtonTableViewCell: UITableViewCell {
         self.contentView.addSubview(button)
         
         setConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     func setConstraints() {

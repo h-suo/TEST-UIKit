@@ -7,26 +7,27 @@
 
 import UIKit
 import SnapKit
+import Then
 
 final class UIKitTableViewCell: UITableViewCell {
 
-    let mainImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.layer.cornerRadius = 16
-        imageView.clipsToBounds = true
-        return imageView
-    }()
-    
-    let tittleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 17)
-        return label
-    }()
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
         setupView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    let mainImageView = UIImageView().then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.layer.cornerRadius = 16
+        $0.clipsToBounds = true
+    }
+    
+    let tittleLabel = UILabel().then {
+        $0.font = UIFont.boldSystemFont(ofSize: 17)
     }
     
     func setupView() {
@@ -35,10 +36,6 @@ final class UIKitTableViewCell: UITableViewCell {
         self.addSubview(tittleLabel)
         
         setConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     func setConstraints() {

@@ -6,37 +6,34 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
 class DetailTableViewCell: UITableViewCell {
-    
-    let label: UILabel = {
-        let lab = UILabel()
-        lab.font = UIFont.systemFont(ofSize: 18)
-        lab.numberOfLines = 0
-        
-        return lab
-    }()
-    
-    let equalLabel: UILabel = {
-        let lab = UILabel()
-        lab.font = UIFont.systemFont(ofSize: 18)
-        lab.text = " = "
-        
-        return lab
-    }()
-    
-    let textField: UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .roundedRect
-        tf.backgroundColor = .systemFill
-        tf.clearButtonMode = .always
-
-        return tf
-    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupStackView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    let label = UILabel().then {
+        $0.font = UIFont.systemFont(ofSize: 18)
+        $0.numberOfLines = 0
+    }
+    
+    let equalLabel = UILabel().then {
+        $0.font = UIFont.systemFont(ofSize: 18)
+        $0.text = " = "
+    }
+    
+    let textField = UITextField().then {
+        $0.borderStyle = .roundedRect
+        $0.backgroundColor = .systemFill
+        $0.clearButtonMode = .always
     }
     
     func setupStackView() {
@@ -46,10 +43,6 @@ class DetailTableViewCell: UITableViewCell {
         self.contentView.addSubview(textField)
         
         setConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     func setConstraints() {
@@ -68,16 +61,4 @@ class DetailTableViewCell: UITableViewCell {
             make.width.equalTo(160)
         }
     }
-    
-    @objc private func textFieldEditingChanged(_ textField: UITextField) {
-        if textField.text?.count == 1 {
-            if textField.text?.first == " " {
-                textField.text = ""
-                return
-            }
-        }
-        guard let code = textField.text else { return }
-        print(code)
-    }
-    
 }

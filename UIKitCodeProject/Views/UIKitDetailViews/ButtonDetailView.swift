@@ -6,44 +6,38 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
 class ButtonDetailView: UIView {
-    
-    let button: UIButton = {
-        let bt = UIButton(type: .system)
-        bt.setTitle("Button", for: .normal)
-        
-        return bt
-    }()
-    
-    let setupLabel: UILabel = {
-        let lab = UILabel()
-        lab.text = "button = UIButton(type: .system)"
-        lab.font = .systemFont(ofSize: 16)
-        lab.textColor = .gray
-        
-        return lab
-    }()
-    
-    let actionView: UIView = {
-        let av = UIView()
-        av.backgroundColor = .systemFill
-        av.layer.cornerRadius = 16
-        
-        return av
-    }()
-    
-    let codeTableView: UITableView = {
-        let ctv = UITableView()
-        ctv.backgroundColor = .quaternarySystemFill
-        
-        return ctv
-    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .black
         setupStackView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    let button = UIButton().then {
+        $0.setTitle("Button", for: .normal)
+    }
+    
+    let setupLabel = UILabel().then {
+        $0.text = "button = UIButton(type: .system)"
+        $0.font = .systemFont(ofSize: 16)
+        $0.textColor = .gray
+    }
+    
+    let actionView = UIView().then {
+        $0.backgroundColor = .systemFill
+        $0.layer.cornerRadius = 16
+    }
+    
+    let codeTableView = UITableView().then {
+        $0.backgroundColor = .quaternarySystemFill
     }
     
     func setupStackView() {
@@ -54,10 +48,6 @@ class ButtonDetailView: UIView {
         self.addSubview(codeTableView)
         
         setConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     func setConstraints() {
