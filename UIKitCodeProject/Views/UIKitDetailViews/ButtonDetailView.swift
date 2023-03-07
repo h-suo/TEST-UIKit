@@ -26,7 +26,7 @@ class ButtonDetailView: UIView {
     }
     
     let setupLabel = UILabel().then {
-        $0.text = "button = UIButton(type: .system)"
+        $0.text = "button = UIButton()"
         $0.font = .systemFont(ofSize: 16)
         $0.textColor = .gray
     }

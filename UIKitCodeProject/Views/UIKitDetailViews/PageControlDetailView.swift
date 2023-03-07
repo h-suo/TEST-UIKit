@@ -11,42 +11,34 @@ import Then
 
 class PageControlDetailView: UIView {
     
-    let pageControl: UIPageControl = {
-        let pc = UIPageControl()
-        pc.numberOfPages = 3
-        pc.currentPage = 0
-        
-        return pc
-    }()
-    
-    let setupLabel: UILabel = {
-        let lab = UILabel()
-        lab.text = "stepper = UIStepper()"
-        lab.font = .systemFont(ofSize: 16)
-        lab.textColor = .gray
-        
-        return lab
-    }()
-    
-    let actionView: UIView = {
-        let av = UIView()
-        av.backgroundColor = .systemFill
-        av.layer.cornerRadius = 16
-        
-        return av
-    }()
-    
-    let codeTableView: UITableView = {
-        let ctv = UITableView()
-        ctv.backgroundColor = .quaternarySystemFill
-        
-        return ctv
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .black
         setupStackView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    let pageControl = UIPageControl().then {
+        $0.numberOfPages = 3
+        $0.currentPage = 0
+    }
+    
+    let setupLabel = UILabel().then {
+        $0.text = "stepper = UIStepper()"
+        $0.font = .systemFont(ofSize: 16)
+        $0.textColor = .gray
+    }
+    
+    let actionView = UIView().then {
+        $0.backgroundColor = .systemFill
+        $0.layer.cornerRadius = 16
+    }
+    
+    let codeTableView = UITableView().then {
+        $0.backgroundColor = .quaternarySystemFill
     }
     
     func setupStackView() {
@@ -57,10 +49,6 @@ class PageControlDetailView: UIView {
         self.addSubview(codeTableView)
         
         setConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     func setConstraints() {
