@@ -7,4 +7,5 @@
 - View위에 실제 View들과 Control들을 올려 코드로 바꾼 설정이 바로 적용된 것을 볼 수 있도록 구현.
 - 코드를 Model, View, Controller로 나누어 추후 관리하기 쉽도록 앱을 구현.
 
+### 개발 블로그 링크
 https://velog.io/@h_suo/Swift
