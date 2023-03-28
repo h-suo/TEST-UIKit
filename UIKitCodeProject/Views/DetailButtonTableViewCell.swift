@@ -49,7 +49,7 @@ class DetailButtonTableViewCell: UITableViewCell {
         label.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().offset(12)
-            make.width.equalTo(172)
+            make.width.equalTo(160)
         }
         equalLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()

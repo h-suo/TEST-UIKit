@@ -21,7 +21,7 @@ class MainTableViewController: UITableViewController {
         self.view.backgroundColor = .black
         
         setupNavigation()
-        navigationItemSetting()
+//        navigationItemSetting()
         setupData()
         setupTableView()
         tableView.reloadData()
@@ -33,11 +33,12 @@ class MainTableViewController: UITableViewController {
         self.navigationItem.title = "Test UIKit"
         self.navigationController?.overrideUserInterfaceStyle = .dark
     }
-    
+    /*
     func navigationItemSetting() {
         let rightButtn = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(pressButton(_:)))
         self.navigationItem.rightBarButtonItem = rightButtn
     }
+     */
     
     func setupTableView() {
         tableView.delegate = self
