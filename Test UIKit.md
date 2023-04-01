@@ -33,7 +33,7 @@ This app is completely free, and there are no costs associated with using the ap
 ## App’s data
 This app does not store any data. For details, please check the following URL.
 
-Privacy policy: https://fog-echidna-58c.notion.site/Privacy-policy-c52252770dc34d80be42ff3ad442b729
+Privacy policy: https://github.com/h-suo/TEST-UIKit/blob/main/Privacy.md
 
 ---
 ## Developer Contact
